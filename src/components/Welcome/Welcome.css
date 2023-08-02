@@ -1,0 +1,20 @@
+.welcomeApp {
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 1rem;
+}
+
+figure {
+    min-width: 290px;
+    min-height: 290px;
+}
+
+figure img {
+    width: 290px;
+    height: 290px;
+    object-fit: contain;
+}
