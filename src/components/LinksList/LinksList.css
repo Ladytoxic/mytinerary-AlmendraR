@@ -1,0 +1,20 @@
+.items-list {
+    list-style: none;
+}
+
+.items-list .item-links-nav {
+    display: inline-flex;
+    margin-left: 0.5rem;
+}
+
+.items-list .item {
+    margin: 0.5rem;
+}
+
+.items-list .item-links-nav a,
+.items-list .item a {
+    font-weight: 500;
+    color: #646cff;
+    text-decoration: inherit;
+}
+

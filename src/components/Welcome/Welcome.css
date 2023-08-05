@@ -1,20 +1,20 @@
 .welcomeApp {
     min-height: 100vh;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     gap: 1rem;
     flex-wrap: wrap;
+}
+
+.welcome-card,
+figure {
+    min-width: 290px;
+    max-width: 400px;
     padding: 1rem;
 }
 
-figure {
-    min-width: 290px;
-    min-height: 290px;
-}
-
 figure img {
-    width: 290px;
-    height: 290px;
+    max-height: 180px;
     object-fit: contain;
 }

@@ -1,6 +1,13 @@
 footer{
-    text-align: center;
-    padding: 0.5rem;
-    background-color: black;
-    color: wheat;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+footer .copyrights {
+    align-self: flex-end;
+    text-align: end;
 }

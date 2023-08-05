@@ -1,26 +1,18 @@
 import './Navbar.css'
-import userDefault from '../../assets/userDefault.svg'
-import Link from '../Link/Link';
+import LinksList from '../LinksList/LinksList'
 
 function Navbar() {
     const links = [
         { title: 'Home', to: '/' },
         { title: 'Cities', to: '/cities' },
-
     ]
     return (
         <nav>
-            <a href="/">MyTinerary</a>
-            <ul className='Menu'>
-                {
-                    links.map((link) => (
-                        <li key={link.to}>
-                            <Link title={link.title} to={link.to} />
-                        </li>
-                    ))
-                }
-                <li><img src={userDefault} alt="userDefault" /></li>
-            </ul>
+            <a className='navbar-title' href="/">MyTinerary</a>
+            <div className='menu'>
+                <LinksList links={links} className='item-links-nav' />
+                <button className='btn-login'>Login</button>
+            </div>
         </nav>
     )
 }
