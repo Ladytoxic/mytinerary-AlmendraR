@@ -11,6 +11,9 @@ node_modules
 dist
 dist-ssr
 *.local
+src/styles/style.scss
+src/styles/style.css.map
+src/components/Carousel
 
 # Editor directories and files
 .vscode/*
