@@ -1,4 +1,4 @@
-import Main from "../layouts/Main";
+import Main from "../layouts/MainLayouts";
 import Welcome from "../components/Welcome/Welcome";
 import Carousel from "../components/Carousel/Carousel";
 
@@ -8,7 +8,7 @@ function HomePage() {
             <Main>
                 <Welcome />
                 <main>
-                <Carousel />
+                    <Carousel />
                 </main>
             </Main>
         </>

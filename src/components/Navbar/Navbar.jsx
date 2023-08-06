@@ -1,6 +1,5 @@
 import './Navbar.css'
 import LinksList from '../LinksList/LinksList'
-import icon from '../../../public/Icon.svg'
 import { Person } from 'akar-icons';
 
 function Navbar() {
@@ -15,10 +14,11 @@ function Navbar() {
 
     return (
         <nav className='fade-in-top'>
-            <a className='navbar-title' href="/"><img className='icon' src={icon} alt="icon" />MyTinerary</a>
+            <a className='navbar-title' href="/"><img className='icon' src="./Icon.svg" alt="icon" />MyTinerary</a>
             <div className='menu'>
                 <LinksList links={links} className='item-links-nav' />
-                <button className='btn-login' onClick={login}><Person strokeWidth={3} size={16} /> Login</button>
+                <button className='btn-login' onClick={login}>
+                    <Person strokeWidth={3} size={16} /> Login</button>
             </div>
         </nav>
     )
