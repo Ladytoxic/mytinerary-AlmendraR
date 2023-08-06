@@ -5,16 +5,21 @@
     align-items: center;
     gap: 1rem;
     flex-wrap: wrap;
-}
-
-.welcome-card,
-figure {
-    min-width: 290px;
-    max-width: 400px;
     padding: 1rem;
 }
 
+.welcome-card .icon {
+    margin-left: 5px;
+}
+.welcome-card,
+figure {
+    min-width: 290px;
+    max-width: 500px;
+}
+
 figure img {
-    max-height: 180px;
+    width: 100%;
+    max-width: 400px;
+    max-height: 400px;
     object-fit: contain;
 }

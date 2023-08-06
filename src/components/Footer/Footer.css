@@ -10,4 +10,5 @@ footer{
 footer .copyrights {
     align-self: flex-end;
     text-align: end;
+    color: #ff6583;
 }
