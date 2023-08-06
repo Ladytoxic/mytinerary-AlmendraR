@@ -1,0 +1,118 @@
+.carousel {
+    min-height: 100vh;
+    background-color: #646cff;
+}
+
+.carousel h2 {
+    text-align: center;
+    color: white;
+    padding-top: 2rem;
+}
+
+.carousel .carousel-container {
+    margin: auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 2rem 0.5rem;
+    max-width: 400px;
+    min-width: 290px;
+    background-image: url(./image/fondo.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0.5rem;
+}
+
+.carousel .carousel-container .carousel-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.carousel .carousel-container .carousel-background .carousel-background-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+    filter: opacity(75%), grayscale(10%);
+}
+
+
+.carousel .carousel-container .carousel-card {
+    animation: fade-in-fwd 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    position: relative;
+    width: 130px;
+    cursor: pointer;
+}
+
+.carousel .carousel-container .carousel-card .carousel-card-img {
+    animation: fade-in-fwd 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    border-radius: 0.5rem;
+    object-fit: cover;
+    width: 130px;
+    height: 200px;
+    filter: drop-shadow(0 0 0.2rem #13131d);
+}
+
+.carousel .carousel-container .carousel-card .carousel-card-body {
+    border-radius: 0 0 0.5rem 0.5rem;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.2rem;
+    background-color: #ffffffd8;
+}
+
+.carousel .carousel-container .carousel-card .carousel-card-body .carousel-card-title {
+    text-align: center;
+}
+
+.btn-prev,
+.btn-next {
+    
+    padding: 0.5rem;
+    background-color: none;
+    border: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.btn-next:hover,
+.btn-prev:hover {
+    background-color: none;
+    border: none;
+}
+
+.btn-prev {
+    left: 0.2rem;
+}
+
+.btn-next {
+    right: 0.2rem;
+}
+
+.fade-in-fwd {
+    animation: fade-in-fwd 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+@keyframes fade-in-fwd {
+    0% {
+        transform: translateZ(-80px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateZ(0);
+        opacity: 1;
+    }
+}
