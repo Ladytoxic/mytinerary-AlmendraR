@@ -7,7 +7,9 @@ function HomePage() {
         <>
             <Main>
                 <Welcome />
+                <main>
                 <Carousel />
+                </main>
             </Main>
         </>
     )

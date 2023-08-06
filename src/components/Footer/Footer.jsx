@@ -1,5 +1,5 @@
 import './footer.css'
-import LinksList from '../LinksList/LinksList'
+import LinksList from '../LinksList/LinksList';
 
 function Footer() {
     const currentYear = new Date().getFullYear();
@@ -14,7 +14,7 @@ function Footer() {
     ]
     return (
         <>
-            <footer>
+            <footer className='fade-in'>
                 <LinksList links={links} />
                 <LinksList links={social} />
                 <p className='copyrights'>&copy; {currentYear} - All rights reserved</p>

@@ -1,5 +1,6 @@
 import './Welcome.css'
 import WelcomeImg from '../../assets/undraw_adventure_map_hnin.svg'
+import { PlaneFill } from 'akar-icons'
 
 
 function Welcome() {
@@ -10,16 +11,17 @@ function Welcome() {
     }
 
     return (
-        <div className="welcomeApp">
+        <header className='welcomeApp fade-in'>
             <div className='welcome-card'>
                 <h1 className='welcome-title'>{title}</h1>
                 <p>{subTitle}</p>
-                <button onClick={cities} className='btn-welcome'>Start traveling</button>
+                <button onClick={cities} className='btn-welcome'>
+                    <PlaneFill strokeWidth={1} size={20} /> Start traveling</button>
             </div>
-            <figure>
+            <figure className='fade-in'>
                 <img src={WelcomeImg} alt="Main image of my tinerary" />
             </figure>
-        </div>
+        </header>
     )
 }
 export default Welcome
