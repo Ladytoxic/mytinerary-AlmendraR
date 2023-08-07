@@ -1,15 +1,9 @@
-import React from 'react'
-
-const routes = [
-  { path: '/', component: HomePage },
-  { path: '**', component: ErrorPage }
-]
+import router from "./router/Router"
+import { RouterProvider } from "react-router-dom"
 
 const App = () => {
   return (
-    <div>
-
-    </div>
+    <RouterProvider router={router} />
   )
 }
 

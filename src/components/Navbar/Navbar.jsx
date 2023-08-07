@@ -1,20 +1,23 @@
 import './Navbar.css'
 import LinksList from '../LinksList/LinksList'
 import { Person } from 'akar-icons';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Navbar() {
     const links = [
         { title: 'Home', to: '/' },
         { title: 'Cities', to: '/cities' },
     ]
+    const navigate = useNavigate()
 
     const login = () => {
-        window.location.href = '/login';
+        navigate('/login')
     }
 
     return (
         <nav className='fade-in-top'>
-            <a className='navbar-title' href="/"><img className='icon' src="./Icon.svg" alt="icon" />MyTinerary</a>
+            <Link className='navbar-title' href="/">
+                <img className='icon' src="./Icon.svg" alt="icon" />MyTinerary</Link>
             <div className='menu'>
                 <LinksList links={links} className='item-links-nav' />
                 <button className='btn-login' onClick={login}>
