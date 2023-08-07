@@ -5,12 +5,13 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    box-shadow:  0 0 0.5rem #292929;
 }
 
 .carousel h2 {
     text-align: center;
     color: white;
-    padding: 2rem 0;
+    padding: 1.5rem 0;
     font-size: 2.5rem;
     text-shadow: 0 2px 2px  #13131d;
 }
@@ -23,20 +24,17 @@
     align-items: stretch;
     flex-wrap: wrap;
     gap: 0.5rem;
-    padding: 2rem 0.5rem;
     max-width: 400px;
     min-width: 290px;
 }
 
 .carousel .carousel-container .carousel-card {
-    animation: fade-in-fwd 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
     position: relative;
     width: 130px;
     cursor: pointer;
 }
 
 .carousel .carousel-container .carousel-card .carousel-card-img {
-    animation: fade-in-fwd 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
     border-radius: 0.5rem;
     object-fit: cover;
     width: 130px;

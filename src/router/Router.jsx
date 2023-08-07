@@ -7,6 +7,7 @@ import MainLayout from '../layouts/MainLayout'
 import HomePage from '../pages/HomePage'
 import CitiesPage from '../pages/CitiesPage'
 import ErrorPage from '../pages/ErrorPage'
+import LoginRegisterPage from '../pages/LoginRegisterPage'
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
       {
         path: '/cities',
         element: <CitiesPage />
+      },
+      {
+        path: '/login',
+        element: <LoginRegisterPage />
       },
     ]
   },
