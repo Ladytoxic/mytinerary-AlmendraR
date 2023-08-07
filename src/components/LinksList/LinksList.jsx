@@ -1,5 +1,5 @@
 import './LinksList.css'
-import Link from '../Link/Link'
+import { Link } from 'react-router-dom'
 
 function LinksList({ className, links }) {
     if (!links) {
@@ -16,7 +16,7 @@ function LinksList({ className, links }) {
                     links.map((link) => (
                         link.title ? (
                             <li className={className || 'item'} key={link.to}>
-                                <Link title={link.title} to={link.to} />
+                                <Link className='link' to={link.to}>{link.title}</Link>
                             </li>
                         ) : null
                     ))
