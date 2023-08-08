@@ -1,16 +1,16 @@
-import './Welcome.css'
-import WelcomeImg from '../../assets/undraw_adventure_map_hnin.svg'
-import { PlaneFill } from 'akar-icons'
-import { useNavigate } from 'react-router-dom'
+import './Welcome.css';
+import WelcomeImg from '../../assets/undraw_adventure_map_hnin.svg';
+import { PlaneFill } from 'akar-icons';
+import { useNavigate } from 'react-router-dom';
 
 
 function Welcome() {
     const title = 'My Tinerary'
     const subTitle = 'Find your perfect trip, designed by insiders who know and love their cities!'
-    
-    const navigate = useNavigate()
+
+    const navigate = useNavigate();
     const cities = () => {
-        navigate('/cities')
+        navigate('/cities');
     }
 
     return (
@@ -25,6 +25,6 @@ function Welcome() {
                 <img src={WelcomeImg} alt="Main image of my tinerary" />
             </figure>
         </header>
-    )
+    );
 }
-export default Welcome
+export default Welcome;

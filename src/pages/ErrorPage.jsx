@@ -1,9 +1,9 @@
 function ErrorPage() {
     return (
-        <div>
-            <h2>404 Not Found</h2>
+        <div className="errorPage">
+            <h1>404 Not Found</h1>
         </div>
-    )
+    );
 }
 
-export default ErrorPage
+export default ErrorPage;

@@ -1,4 +1,4 @@
-import './footer.css'
+import './footer.css';
 import LinksList from '../LinksList/LinksList';
 import { YoutubeFill, FacebookFill, InstagramFill } from 'akar-icons';
 
@@ -13,6 +13,7 @@ function Footer() {
         { title: 'MyTinerary_ok', to: 'https://www.instagram.com/' },
         { title: 'MyTinerary', to: 'https://www.youtube.com/' }
     ]
+
     return (
         <>
             <footer className='fade-in'>
@@ -41,7 +42,7 @@ function Footer() {
                 </div>
             </footer>
         </>
-    )
+    );
 }
 
-export default Footer
+export default Footer;

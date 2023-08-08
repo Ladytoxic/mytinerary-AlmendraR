@@ -17,6 +17,7 @@
 }
 
 .carousel .carousel-container {
+    padding: 1rem 0;
     margin: auto;
     position: relative;
     display: flex;
@@ -54,7 +55,14 @@
 }
 
 .carousel .carousel-container .carousel-card .carousel-card-body .carousel-card-title {
+    font-size: 1rem;
     text-align: center;
+}
+
+.carousel .carousel-container .carousel-card .carousel-card-body .carousel-card-country {
+    display: block;
+    text-align: center;
+    color: #202020;
 }
 
 .btn-prev,
@@ -66,12 +74,6 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-}
-
-.btn-next:hover,
-.btn-prev:hover {
-    background-color: none;
-    border: none;
 }
 
 .btn-prev {

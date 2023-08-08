@@ -1,13 +1,11 @@
-import { createBrowserRouter } from 'react-router-dom'
+import { createBrowserRouter } from 'react-router-dom';
 
-//Vistas
-import MainLayout from '../layouts/MainLayout'
+import MainLayout from '../layouts/MainLayout';
 
-// Paginas
-import HomePage from '../pages/HomePage'
-import CitiesPage from '../pages/CitiesPage'
-import ErrorPage from '../pages/ErrorPage'
-import LoginRegisterPage from '../pages/LoginRegisterPage'
+import HomePage from '../pages/HomePage';
+import CitiesPage from '../pages/CitiesPage';
+import ErrorPage from '../pages/ErrorPage';
+import LoginRegisterPage from '../pages/LoginRegisterPage';
 
 const router = createBrowserRouter([
   {
@@ -32,6 +30,6 @@ const router = createBrowserRouter([
     path: '/*',
     element: <ErrorPage />
   }
-])
+]);
 
-export default router
+export default router;
