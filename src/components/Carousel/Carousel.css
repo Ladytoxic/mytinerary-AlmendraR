@@ -5,7 +5,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    box-shadow:  0 0 0.5rem #292929;
+    box-shadow: 0 0 0.5rem #292929;
 }
 
 .carousel h2 {
@@ -13,7 +13,7 @@
     color: white;
     padding: 1.5rem 0;
     font-size: 2.5rem;
-    text-shadow: 0 2px 2px  #13131d;
+    text-shadow: 0 2px 2px #13131d;
 }
 
 .carousel .carousel-container {
@@ -36,6 +36,7 @@
 }
 
 .carousel .carousel-container .carousel-card .carousel-card-img {
+    animation: fade-in-fwd 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
     border-radius: 0.5rem;
     object-fit: cover;
     width: 130px;
@@ -65,23 +66,34 @@
     color: #202020;
 }
 
+button {
+    background: none;
+}
+
 .btn-prev,
 .btn-next {
-
-    padding: 0.5rem;
-    background-color: none;
+    color: #ffffffd5;
+    padding: 0.2rem;
     border: none;
+    border-radius: 50%;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    transition: all 0.3s;
+}
+
+.btn-prev:hover,
+.btn-next:hover {
+    color: #c5bdf3d0;
+
 }
 
 .btn-prev {
-    left: 0.2rem;
+    left: 0;
 }
 
 .btn-next {
-    right: 0.2rem;
+    right: 0;
 }
 
 .fade-in-fwd {

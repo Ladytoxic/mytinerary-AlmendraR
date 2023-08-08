@@ -39,12 +39,21 @@ const Carousel = () => {
             </div>
           </div>
         ))}
-        <button onClick={prevImage} className='btn-prev'>
-          <CircleChevronLeftFill strokeWidth={1} size={20} />
-        </button>
-        <button onClick={nextImage} className='btn-next'>
-          <CircleChevronRightFill strokeWidth={1} size={20} />
-        </button>
+
+        {
+          (index > 0 &&
+            <button onClick={prevImage} className='btn-prev'>
+              <CircleChevronLeftFill strokeWidth={2} size={35} />
+            </button>
+          )
+        }
+        {
+          (index + 4 < cities.length &&
+            <button onClick={nextImage} className='btn-next'>
+              <CircleChevronRightFill strokeWidth={2} size={35} />
+            </button>
+          )
+        }
       </div>
     </section>
   );

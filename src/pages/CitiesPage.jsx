@@ -1,7 +1,8 @@
 const CitiesPage = () => {
   return (
-    <div>
-    
+    <div className="citiesPage">
+      <h1>Cities</h1>
+      <h2>🚧Page under construction🚧</h2>
     </div>
   )
 }
