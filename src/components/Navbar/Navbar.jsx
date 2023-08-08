@@ -1,5 +1,5 @@
-import './Navbar.css'
-import LinksList from '../LinksList/LinksList'
+import './Navbar.css';
+import LinksList from '../LinksList/LinksList';
 import { Person } from 'akar-icons';
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -8,10 +8,10 @@ function Navbar() {
         { title: 'Home', to: '/' },
         { title: 'Cities', to: '/cities' },
     ]
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     const login = () => {
-        navigate('/login')
+        navigate('/login');
     }
 
     return (
@@ -24,6 +24,6 @@ function Navbar() {
                     <Person strokeWidth={3} size={16} /> Login</button>
             </div>
         </nav>
-    )
+    );
 }
-export default Navbar
+export default Navbar;

@@ -1,4 +1,4 @@
-footer{
+footer {
     display: flex;
     justify-content: space-between;
     align-items: stretch;
@@ -7,8 +7,36 @@ footer{
     gap: 1rem;
 }
 
+ul {
+    list-style: none;
+}
+
+.social a {
+    padding: 0.3rem;
+    display: flex;
+    gap: 0.3rem;
+    text-decoration: none;
+}
+
+.social.facebook a {
+    color: #094bff;
+}
+
+.social.instagram a {
+    color: #ff008c;
+}
+
+.social.youtube a {
+    color: #eb0505;
+}
+
 footer .copyrights {
-    align-self: flex-end;
-    text-align: end;
-    color: #ff6583;
+    text-align: center;
+}
+
+footer .copyrights img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    transform: scale(1.2);
 }

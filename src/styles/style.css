@@ -18,12 +18,18 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  background-color: #ffffff;
+  color: black;
+}
+
 h1 {
   font-size: 3rem;
   line-height: 1.7;
 }
 
-button {
+.btn-welcome,
+.btn-login {
   margin: 1rem 0;
   border-radius: 8px;
   border: 2px solid transparent;
@@ -38,15 +44,47 @@ button {
   transition: all 0.3s;
 }
 
-button:hover {
+.btn-welcome:hover,
+.btn-login:hover {
   border-color: #646cff;
   background-color: #ffffff;
   color: #646cff;
 }
 
-button:focus,
-button:focus-visible {
+.btn-welcome:focus,
+.btn-login:focus,
+.btn-welcome:focus-visible,
+.btn-login:focus-visible {
   outline: 5px auto -webkit-focus-ring-color;
+}
+
+.citiesPage,
+.loginPage {
+  min-height: 70vh;
+  padding: 2rem 1rem;
+  animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  text-align: center;
+}
+.citiesPage .link,
+.loginPage .link {
+  text-decoration: none;
+  color: #646cff;
+}
+
+.errorPage {
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  text-align: center;
+}
+.errorPage .link {
+  text-decoration: none;
+  color: #646cff;
+}
+
+img,
+button {
+  animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 
 .fade-in {

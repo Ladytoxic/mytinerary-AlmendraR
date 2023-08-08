@@ -1,5 +1,5 @@
-import './LinksList.css'
-import { Link } from 'react-router-dom'
+import './LinksList.css';
+import { Link } from 'react-router-dom';
 
 function LinksList({ className, links }) {
     if (!links) {
@@ -7,7 +7,7 @@ function LinksList({ className, links }) {
             <ul className='items-list'>
                 <li className={className || 'item'}>Empty list</li>
             </ul>
-        )
+        );
     }
     return (
         <>
@@ -23,7 +23,7 @@ function LinksList({ className, links }) {
                 )}
             </ul>
         </>
-    )
+    );
 }
 
-export default LinksList
+export default LinksList;

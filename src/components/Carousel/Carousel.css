@@ -5,17 +5,19 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    box-shadow: 0 0 0.5rem #292929;
 }
 
 .carousel h2 {
     text-align: center;
     color: white;
-    padding: 2rem 0;
+    padding: 1.5rem 0;
     font-size: 2.5rem;
-    text-shadow: 0 2px 2px  #13131d;
+    text-shadow: 0 2px 2px #13131d;
 }
 
 .carousel .carousel-container {
+    padding: 1rem 0;
     margin: auto;
     position: relative;
     display: flex;
@@ -23,13 +25,11 @@
     align-items: stretch;
     flex-wrap: wrap;
     gap: 0.5rem;
-    padding: 2rem 0.5rem;
     max-width: 400px;
     min-width: 290px;
 }
 
 .carousel .carousel-container .carousel-card {
-    animation: fade-in-fwd 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
     position: relative;
     width: 130px;
     cursor: pointer;
@@ -56,32 +56,44 @@
 }
 
 .carousel .carousel-container .carousel-card .carousel-card-body .carousel-card-title {
+    font-size: 1rem;
     text-align: center;
+}
+
+.carousel .carousel-container .carousel-card .carousel-card-body .carousel-card-country {
+    display: block;
+    text-align: center;
+    color: #202020;
+}
+
+button {
+    background: none;
 }
 
 .btn-prev,
 .btn-next {
-
-    padding: 0.5rem;
-    background-color: none;
+    color: #ffffffd5;
+    padding: 0.2rem;
     border: none;
+    border-radius: 50%;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    transition: all 0.3s;
 }
 
-.btn-next:hover,
-.btn-prev:hover {
-    background-color: none;
-    border: none;
+.btn-prev:hover,
+.btn-next:hover {
+    color: #c5bdf3d0;
+
 }
 
 .btn-prev {
-    left: 0.2rem;
+    left: 0;
 }
 
 .btn-next {
-    right: 0.2rem;
+    right: 0;
 }
 
 .fade-in-fwd {

@@ -3,61 +3,61 @@ import { CircleChevronLeftFill, CircleChevronRightFill } from 'akar-icons';
 import { useState, useEffect } from 'react';
 
 const Carousel = () => {
-  const img = [
-    {
-      id:1,
-      title: 'Tokio',
-      url: './image/tokio.jpg'
-    },
-    {
-      id:2,
-      title: 'New Your',
-      url: './image/newyour.jpg'
-    },
-    {
-      id:3,
-      title: 'Buenos Aires',
-      url: './image/buenos_aires.jpg'
-    },
-    {
-      id:4,
-      title: 'Madrid',
-      url: './image/madrid.jpg'
-    }
-  ]
-  const [index, setIndex] = useState(0)
+  const [cities, setCities] = useState([]);
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    fetch('./data_cities.json')
+      .then(resp => resp.json())
+      .then(data => setCities(data));
+  },
+    []
+  );
 
   const nextImage = () => {
-    setIndex(index + 4)
+    if (index + 4 < cities.length) {
+      setIndex(index + 4);
+    }
   }
 
   const prevImage = () => {
-    setIndex(index - 4)
+    if (index - 4 >= 0) {
+      setIndex(index - 4);
+    }
   }
 
   return (
     <section className='carousel fade-in'>
       <h2>Popular Mytineraries</h2>
       <div className='carousel-container'>
-        {
-          img.map((img) => (
-            <div key={img.id} className='carousel-card'>
-              <img className='carousel-card-img' src={img.url} alt={`image ${img.title}`} />
-              <div className='carousel-card-body'>
-                <h3 className='carousel-card-title'>{img.title}</h3>
-              </div>
+        {cities.slice(index, index + 4).map((img) => (
+          <div key={img.id} className='carousel-card'>
+            <img className='carousel-card-img' src={img.image} alt={`image ${img.name}`} />
+            <div className='carousel-card-body'>
+              <h3 className='carousel-card-title'>{img.name}</h3>
+              <span className='carousel-card-country'>{img.country}</span>
             </div>
-          ))
+          </div>
+        ))}
+
+        {
+          (index > 0 &&
+            <button onClick={prevImage} className='btn-prev'>
+              <CircleChevronLeftFill strokeWidth={2} size={35} />
+            </button>
+          )
         }
-        <button onClick={prevImage} className='btn-prev'>
-          <CircleChevronLeftFill strokeWidth={1} size={20} />
-        </button>
-        <button onClick={nextImage} className='btn-next'>
-          <CircleChevronRightFill strokeWidth={1} size={20} />
-        </button>
+        {
+          (index + 4 < cities.length &&
+            <button onClick={nextImage} className='btn-next'>
+              <CircleChevronRightFill strokeWidth={2} size={35} />
+            </button>
+          )
+        }
       </div>
     </section>
-  )
+  );
 }
 
-export default Carousel
+export default Carousel;
+

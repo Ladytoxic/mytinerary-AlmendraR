@@ -10,7 +10,7 @@ function HomePage() {
                 <Carousel />
             </main>
         </>
-    )
+    );
 }
 
-export default HomePage
+export default HomePage;
