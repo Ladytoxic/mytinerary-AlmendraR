@@ -24,3 +24,5 @@ src/styles/style.css.map
 *.njsproj
 *.sln
 *.sw?
+.env
+public/_redirects
