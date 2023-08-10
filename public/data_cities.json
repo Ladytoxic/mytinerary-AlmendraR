@@ -82,5 +82,26 @@
     "country": "Jordan",
     "description": "The ancient city of Petra is a UNESCO World Heritage Site known for its impressive rock-cut architecture and history.",
     "image": "https://i.postimg.cc/RFjZdr02/filippo-cesarini-c8-F1h-J-UTrk-unsplash.jpg"
+  },
+  {
+    "id": 13,
+    "name": "Venice",
+    "country": "Italy",
+    "description": "Venice is a romantic city of canals, known for its historic architecture and unique waterways.",
+    "image": "https://i.postimg.cc/xdMVmn4Y/kit-suman-5mcnze-SHFv-E-unsplash.jpg"
+  },
+  {
+    "id": 14,
+    "name": "Prague",
+    "country": "Czech Republic",
+    "description": "Prague is a fairy-tale city with stunning castles, charming streets, and a rich cultural heritage.",
+    "image": "https://i.postimg.cc/13LZ4fMJ/martin-krchnacek-Oyoa-Cp-MCR0-U-unsplash.jpg"
+  },
+  {
+    "id": 15,
+    "name": "Cancun",
+    "country": "Mexico",
+    "description": "Cancun is a tropical paradise with beautiful beaches, vibrant nightlife, and ancient Mayan ruins.",
+    "image": "https://i.postimg.cc/hjnWb6km/aman-mz-Ey-Ep3sy-MI-unsplash.jpg"
   }
 ]

@@ -13,18 +13,22 @@ const Carousel = () => {
   },
     []
   );
-
   const nextImage = () => {
-    if (index + 4 < cities.length) {
-      setIndex(index + 4);
+    const remainingCities = cities.length - index;
+    const step = Math.min(remainingCities, 4);
+
+    if (step > 0) {
+      setIndex(index + step);
     }
-  }
+  };
 
   const prevImage = () => {
-    if (index - 4 >= 0) {
-      setIndex(index - 4);
+    const step = Math.min(index, 4);
+
+    if (step > 0) {
+      setIndex(index - step);
     }
-  }
+  };
 
   return (
     <section className='carousel fade-in'>
@@ -43,14 +47,14 @@ const Carousel = () => {
         {
           (index > 0 &&
             <button onClick={prevImage} className='btn-prev'>
-              <CircleChevronLeftFill strokeWidth={2} size={35} />
+              <CircleChevronLeftFill strokeWidth={2} size={30} />
             </button>
           )
         }
         {
           (index + 4 < cities.length &&
             <button onClick={nextImage} className='btn-next'>
-              <CircleChevronRightFill strokeWidth={2} size={35} />
+              <CircleChevronRightFill strokeWidth={2} size={30} />
             </button>
           )
         }
