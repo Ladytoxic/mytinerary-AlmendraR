@@ -38,12 +38,12 @@
 }
 
 .carousel-card:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
     z-index: 3;
 }
 
 .carousel-container:hover .carousel-card:not(:hover) {
-    filter: grayscale(30%);
+    filter: grayscale(40%);
 }
 
 .carousel .carousel-container .carousel-card .carousel-card-img {

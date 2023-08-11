@@ -72,7 +72,7 @@ h1 {
 }
 
 .errorPage {
-  min-height: 100vh;
+  min-height: 80vh;
   padding: 2rem 1rem;
   animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
   text-align: center;
@@ -81,6 +81,10 @@ h1 {
   font-weight: 500;
   color: #646cff;
   text-decoration: inherit;
+}
+.errorPage img {
+  transform: scale(1.4);
+  margin-bottom: -2rem;
 }
 
 img,
