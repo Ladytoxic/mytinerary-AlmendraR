@@ -7,9 +7,9 @@ const Carousel = () => {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    fetch('./data_cities.json')
+    fetch('http://localhost:3000/cities')
       .then(resp => resp.json())
-      .then(data => setCities(data));
+      .then(data => setCities(data.cities));
   },
     []
   );
