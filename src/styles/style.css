@@ -23,6 +23,11 @@ body {
   color: black;
 }
 
+#root {
+  margin: auto;
+  max-width: 1000px;
+}
+
 h1 {
   font-size: 3rem;
   line-height: 1.7;

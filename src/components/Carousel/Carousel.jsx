@@ -8,11 +8,31 @@ const Carousel = () => {
 
   useEffect(() => {
     fetch('http://localhost:3000/cities')
-      .then(resp => resp.json())
-      .then(data => setCities(data.cities));
+      .then(resp => {
+        if (!resp.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return resp.json();
+      })
+      .then(data => setCities(data.cities))
+      .catch(error => {
+        console.log('Fetching data from local file...');
+        fetch('/data_cities.json')
+          .then(resp => {
+            if (!resp.ok) {
+              throw new Error('Error fetching local data');
+            }
+            return resp.json();
+          })
+          .then(data => setCities(data))
+          .catch(localError => {
+            console.log('Error fetching local data:', localError);
+          });
+      });
   },
     []
   );
+
   const nextImage = () => {
     const remainingCities = cities.length - index;
     const step = Math.min(remainingCities, 4);
