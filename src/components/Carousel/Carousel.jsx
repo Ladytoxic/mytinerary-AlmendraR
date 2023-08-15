@@ -1,6 +1,7 @@
 import './Carousel.css';
 import { CircleChevronLeftFill, CircleChevronRightFill } from 'akar-icons';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const Carousel = () => {
   const [cities, setCities] = useState([]);
@@ -55,13 +56,15 @@ const Carousel = () => {
       <h2>Popular Mytineraries</h2>
       <div className='carousel-container'>
         {cities.slice(index, index + 4).map((img) => (
-          <div key={img.id} className='carousel-card'>
-            <img className='carousel-card-img' src={img.image} alt={`image ${img.name}`} />
-            <div className='carousel-card-body'>
-              <h3 className='carousel-card-title'>{img.name}</h3>
-              <span className='carousel-card-country'>{img.country}</span>
+          <Link to={'/cities/' + img._id}>
+            <div key={img.id} className='carousel-card'>
+              <img className='carousel-card-img' src={img.image} alt={`image ${img.name}`} />
+              <div className='carousel-card-body'>
+                <h3 className='carousel-card-title'>{img.name}</h3>
+                <span className='carousel-card-country'>{img.country}</span>
+              </div>
             </div>
-          </div>
+          </Link>
         ))}
 
         {

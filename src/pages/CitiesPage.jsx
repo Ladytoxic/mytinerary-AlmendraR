@@ -1,9 +1,14 @@
+import Banner from "../components/Banner/Banner"
+import Search from "../components/Search/SearchInput"
+
 const CitiesPage = () => {
   return (
-    <div className="citiesPage">
-      <h1>Cities</h1>
-      <h2>🚧Page under construction🚧</h2>
-    </div>
+    <>
+      <Banner />
+      <main>
+        <Search />
+      </main>
+    </>
   )
 }
 

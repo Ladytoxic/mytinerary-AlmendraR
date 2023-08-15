@@ -1,0 +1,7 @@
+.headerPage {
+    min-height: 40vh;
+    background-image: url(../../assets/banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}

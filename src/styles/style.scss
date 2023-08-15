@@ -65,11 +65,10 @@ h1 {
 
 .citiesPage,
 .loginPage {
-    min-height: 70vh;
     padding: 2rem 1rem;
     animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
     text-align: center;
-
+ 
     .link {
         text-decoration: none;
         color: #646cff;

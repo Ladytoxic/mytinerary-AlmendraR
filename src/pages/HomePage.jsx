@@ -1,4 +1,3 @@
-
 import Welcome from "../components/Welcome/Welcome";
 import Carousel from "../components/Carousel/Carousel";
 
