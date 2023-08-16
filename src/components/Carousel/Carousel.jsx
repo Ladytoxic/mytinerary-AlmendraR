@@ -18,7 +18,7 @@ const Carousel = () => {
       .then(data => setCities(data.cities))
       .catch(error => {
         console.log('Fetching data from local file...');
-        fetch('/data_cities.json')
+        fetch('./data_cities.json')
           .then(resp => {
             if (!resp.ok) {
               throw new Error('Error fetching local data');

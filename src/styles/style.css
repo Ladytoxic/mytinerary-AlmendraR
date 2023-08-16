@@ -23,11 +23,6 @@ body {
   color: black;
 }
 
-#root {
-  margin: auto;
-  max-width: 1000px;
-}
-
 h1 {
   font-size: 3rem;
   line-height: 1.7;
@@ -69,8 +64,8 @@ h1 {
   animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
   text-align: center;
 }
-.citiesPage .link,
-.loginPage .link {
+
+.link {
   text-decoration: none;
   color: #646cff;
 }

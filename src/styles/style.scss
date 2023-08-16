@@ -23,10 +23,6 @@ body {
     color: black;
 }
 
-#root {
-    margin: auto;
-    max-width: 1000px;
-}
 
 h1 {
     font-size: 3rem;
@@ -69,10 +65,10 @@ h1 {
     animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
     text-align: center;
  
-    .link {
-        text-decoration: none;
-        color: #646cff;
-    }
+}
+.link {
+    text-decoration: none;
+    color: #646cff;
 }
 
 .errorPage {
