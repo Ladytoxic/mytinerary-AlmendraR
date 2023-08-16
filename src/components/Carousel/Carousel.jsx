@@ -1,42 +1,30 @@
 import './Carousel.css';
 import { CircleChevronLeftFill, CircleChevronRightFill } from 'akar-icons';
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import useAxiosHook from '../../Hooks/useAxiosHook';
 
 const Carousel = () => {
   const [cities, setCities] = useState([]);
   const [index, setIndex] = useState(0);
+  const navigate = useNavigate();
+
+  const { data, error } = useAxiosHook({ URL_API: '/data_cities.json' });
 
   useEffect(() => {
-    fetch('http://localhost:3000/cities')
-      .then(resp => {
-        if (!resp.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return resp.json();
-      })
-      .then(data => setCities(data.cities))
-      .catch(error => {
-        console.log('Fetching data from local file...');
-        fetch('./data_cities.json')
-          .then(resp => {
-            if (!resp.ok) {
-              throw new Error('Error fetching local data');
-            }
-            return resp.json();
-          })
-          .then(data => setCities(data))
-          .catch(localError => {
-            console.log('Error fetching local data:', localError);
-          });
-      });
-  },
-    []
-  );
+    if (data) {
+      setCities(data);
+    }
+  }, [data]);
+
+  if (error) {
+    return <p>Hubo un error: {error.message}</p>;
+  }
 
   const nextImage = () => {
     const remainingCities = cities.length - index;
     const step = Math.min(remainingCities, 4);
+
 
     if (step > 0) {
       setIndex(index + step);
@@ -51,20 +39,22 @@ const Carousel = () => {
     }
   };
 
+  const detaillsCity = (cityId) => {
+    navigate(`/cities/${cityId}`);
+  }
+
   return (
     <section className='carousel fade-in'>
       <h2>Popular Mytineraries</h2>
       <div className='carousel-container'>
         {cities.slice(index, index + 4).map((img) => (
-          <Link to={'/cities/' + img._id}>
-            <div key={img.id} className='carousel-card'>
-              <img className='carousel-card-img' src={img.image} alt={`image ${img.name}`} />
-              <div className='carousel-card-body'>
-                <h3 className='carousel-card-title'>{img.name}</h3>
-                <span className='carousel-card-country'>{img.country}</span>
-              </div>
+          <div key={img._id} className='carousel-card' onClick={() => detaillsCity(img._id)}>
+            <img className='carousel-card-img' src={img.image} alt={`image ${img.name}`} />
+            <div className='carousel-card-body'>
+              <h3 className='carousel-card-title'>{img.name}</h3>
+              <span className='carousel-card-country'>{img.country}</span>
             </div>
-          </Link>
+          </div>
         ))}
 
         {

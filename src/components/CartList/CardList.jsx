@@ -1,35 +1,29 @@
 import './CardList.css';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Location } from 'akar-icons';
+import Card from '../Card/Card';
+import useAxiosHook from '../../Hooks/useAxiosHook';
 
 const CardList = () => {
-  const [cities, setCities] = useState([]);
+  const [cities, setCities] = useState();
+
+  const { data, error } = useAxiosHook({ URL_API: '/dataApi.json' });
+
   useEffect(() => {
-    fetch('/dataApi.json')
-      .then(resp => resp.json())
-      .then(data => {
-        setCities(data);
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  },
-    []
-  );
+    if (data) {
+      setCities(data);
+    }
+  }, [data]);
+
+  if (error) {
+    return <p>Hubo un error: {error.message}</p>;
+  }
 
   return (
     <section className='card-list'>
-      {(cities.map((img) => (
+      {(cities?.map((img) => (
         <Link className='link' key={img._id} to={'/cities/' + img._id}>
-          <div className='card'>
-            <img className='card-img' src={img.image} alt={'imagen' + img.title} />
-            <div className='card-header'>
-              <h4 className='card-title'>{img.name}</h4>
-              <span className='card-coutry'><Location strokeWidth={2} size={16} /> {img.country}</span>
-            </div>
-            <button className='card-btn'>View more</button>
-          </div>
+          <Card _id={img._id} name={img.name} country={img.country} image={img.image} />
         </Link>
       )))}
     </section>
