@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const useAxiosHook = ({ URL_API }) => {
+const useFetch = ({ URL_API }) => {
   const [data, setData] = useState();
   const [error, setError] = useState(null);
 
@@ -20,4 +20,4 @@ const useAxiosHook = ({ URL_API }) => {
   return { data, error };
 }
 
-export default useAxiosHook;
+export default useFetch;

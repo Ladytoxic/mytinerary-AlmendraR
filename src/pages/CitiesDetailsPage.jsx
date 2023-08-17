@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import useAxiosHook from "../Hooks/useAxiosHook";
+import useFetch from "../Hooks/useFecth";
 
 const CitiesDetailsPage = () => {
   const [city, setCity] = useState({});
   const { _id } = useParams();
 
-  const { data, error } = useAxiosHook({ URL_API: 'http://localhost:3000/cities/' + _id });
+  const { data, error } = useFetch({ URL_API: 'http://localhost:3000/cities/' + _id });
 
   useEffect(() => {
     if (data) {

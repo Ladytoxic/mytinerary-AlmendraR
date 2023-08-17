@@ -2,7 +2,7 @@ import './CardList.css';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Card from '../Card/Card';
-import useAxiosHook from '../../Hooks/useAxiosHook';
+import useFetch from '../../Hooks/useFecth';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 
 const CardList = () => {
@@ -10,8 +10,8 @@ const CardList = () => {
   const [searchInput, setSearchInput] = useState('');
   const [errorCities, setErrorCities] = useState(null)
 
-  const { data, error } = useAxiosHook({ URL_API: `http://localhost:3000/cities?name=${searchInput}&country=` })
-  
+  const { data, error } = useFetch({ URL_API: `http://localhost:3000/cities?name=${searchInput}&country=` })
+
   useEffect(() => {
     if (data) {
       setCities(data.cities);
@@ -45,15 +45,13 @@ const CardList = () => {
           <ErrorMessage message={error.data.message} />
         )}
       </section>
-      {errorCities ? null : (
-        <section className='card-list'>
-          {(cities?.map((img) => (
-            <Link className='link' key={img._id} to={'/cities/' + img._id}>
-              <Card _id={img._id} name={img.name} country={img.country} image={img.image} />
-            </Link>
-          )))}
-        </section>
-      )}
+      <section className='card-list'>
+        {(cities?.map((img) => (
+          <Link className='link' key={img._id} to={'/cities/' + img._id}>
+            <Card _id={img._id} name={img.name} country={img.country} image={img.image} />
+          </Link>
+        )))}
+      </section>
     </>
   )
 }

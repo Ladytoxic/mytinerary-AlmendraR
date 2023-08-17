@@ -2,18 +2,18 @@ import './Carousel.css';
 import { CircleChevronLeftFill, CircleChevronRightFill } from 'akar-icons';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import useAxiosHook from '../../Hooks/useAxiosHook';
+import useFetch from '../../Hooks/useFecth';
 
 const Carousel = () => {
   const [cities, setCities] = useState([]);
   const [index, setIndex] = useState(0);
   const navigate = useNavigate();
 
-  const { data } = useAxiosHook({ URL_API: 'http://localhost:3000/cities' });
+  const { data } = useFetch({ URL_API: 'http://localhost:3000/cities' });
 
   useEffect(() => {
     if (data) {
-      setCities(data.cities);
+      setCities(data.cities.slice(0, 12));
       console.log(data)
     }
   },
