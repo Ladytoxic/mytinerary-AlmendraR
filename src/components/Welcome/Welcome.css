@@ -6,11 +6,13 @@
     gap: 1rem;
     flex-wrap: wrap;
     padding: 1rem;
+    background-image: linear-gradient(to top, #edeeee, #f3f4f4, #fafbfa, #fbfcfc, #fcfdfd, #fefefe, #ffffff);
 }
 
 .welcome-card .icon {
     margin-left: 5px;
 }
+
 .welcome-card,
 figure {
     min-width: 290px;

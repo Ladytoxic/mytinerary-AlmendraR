@@ -6,6 +6,7 @@ import HomePage from '../pages/HomePage';
 import CitiesPage from '../pages/CitiesPage';
 import ErrorPage from '../pages/ErrorPage';
 import LoginRegisterPage from '../pages/LoginRegisterPage';
+import CitiesDetailsPage from '../pages/CitiesDetailsPage';
 
 const router = createBrowserRouter([
   {
@@ -21,10 +22,14 @@ const router = createBrowserRouter([
         element: <CitiesPage />
       },
       {
-        path: '/login',
-        element: <LoginRegisterPage />
+        path: '/cities/:_id',
+        element: <CitiesDetailsPage />
       },
     ]
+  },
+  {
+    path: '/login',
+    element: <LoginRegisterPage />
   },
   {
     path: '/*',

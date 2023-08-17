@@ -1,10 +1,17 @@
+import Banner from "../components/Banner/Banner"
+import CardList from "../components/CartList/CardList"
+import { Search } from "akar-icons"
+
 const CitiesPage = () => {
+
   return (
-    <div className="citiesPage">
-      <h1>Cities</h1>
-      <h2>🚧Page under construction🚧</h2>
-    </div>
+    <>
+      <Banner />
+      <main>
+        <CardList />
+      </main>
+    </>
   )
 }
 
-export default CitiesPage
+export default CitiesPage;

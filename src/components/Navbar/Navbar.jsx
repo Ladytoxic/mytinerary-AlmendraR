@@ -2,6 +2,7 @@ import './Navbar.css';
 import LinksList from '../LinksList/LinksList';
 import { Person } from 'akar-icons';
 import { Link, useNavigate } from 'react-router-dom';
+import icon from '../../assets/Icon.svg';
 
 function Navbar() {
     const links = [
@@ -17,7 +18,7 @@ function Navbar() {
     return (
         <nav className='fade-in-top'>
             <Link className='navbar-title' href="/">
-                <img className='icon' src="./Icon.svg" alt="icon" />MyTinerary</Link>
+                <img className='icon' src={icon} alt="icon" />MyTinerary</Link>
             <div className='menu'>
                 <LinksList links={links} className='item-links-nav' />
                 <button className='btn-login' onClick={login}>

@@ -29,7 +29,8 @@ h1 {
 }
 
 .btn-welcome,
-.btn-login {
+.btn-login,
+.btn {
   margin: 1rem 0;
   border-radius: 8px;
   border: 2px solid transparent;
@@ -45,7 +46,8 @@ h1 {
 }
 
 .btn-welcome:hover,
-.btn-login:hover {
+.btn-login:hover,
+.btn:hover {
   border-color: #646cff;
   background-color: #ffffff;
   color: #646cff;
@@ -53,33 +55,80 @@ h1 {
 
 .btn-welcome:focus,
 .btn-login:focus,
+.btn:focus,
 .btn-welcome:focus-visible,
-.btn-login:focus-visible {
+.btn-login:focus-visible,
+.btn:focus-visible {
   outline: 5px auto -webkit-focus-ring-color;
 }
 
 .citiesPage,
 .loginPage {
-  min-height: 70vh;
   padding: 2rem 1rem;
   animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
   text-align: center;
 }
-.citiesPage .link,
-.loginPage .link {
+
+.link {
   text-decoration: none;
   color: #646cff;
 }
 
-.errorPage {
+.details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-shadow: 0 0 0.4rem black;
+  position: relative;
   min-height: 100vh;
+  text-align: center;
+}
+.details .details-body {
+  max-width: 500px;
+}
+.details .details-body h1 {
+  margin: none;
+  line-height: 1;
+}
+.details .details-body span {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8980392157);
+  margin-bottom: 1rem;
+}
+.details .details-body p {
+  margin: 1rem;
+}
+.details .details-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  -o-object-position: center;
+     object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  filter: brightness(50%);
+  z-index: -1;
+}
+
+.errorPage {
+  min-height: 80vh;
   padding: 2rem 1rem;
   animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
   text-align: center;
 }
 .errorPage .link {
-  text-decoration: none;
+  font-weight: 500;
   color: #646cff;
+  text-decoration: inherit;
+}
+.errorPage img {
+  transform: scale(1.4);
+  margin-bottom: -2rem;
 }
 
 img,
