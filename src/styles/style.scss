@@ -30,7 +30,8 @@ h1 {
 }
 
 .btn-welcome,
-.btn-login {
+.btn-login,
+.btn {
     margin: 1rem 0;
     border-radius: 8px;
     border: 2px solid transparent;
@@ -46,7 +47,8 @@ h1 {
 }
 
 .btn-welcome:hover,
-.btn-login:hover {
+.btn-login:hover,
+.btn:hover {
     border-color: #646cff;
     background-color: #ffffff;
     color: #646cff;
@@ -54,8 +56,10 @@ h1 {
 
 .btn-welcome:focus,
 .btn-login:focus,
+.btn:focus,
 .btn-welcome:focus-visible,
-.btn-login:focus-visible {
+.btn-login:focus-visible,
+.btn:focus-visible {
     outline: 5px auto -webkit-focus-ring-color;
 }
 
@@ -69,6 +73,50 @@ h1 {
 .link {
     text-decoration: none;
     color: #646cff;
+}
+
+.details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-shadow: 0 0 0.4rem black;
+    position: relative;
+    min-height: 100vh;
+    text-align: center;
+
+    .details-body {
+        max-width: 500px;
+
+        h1 {
+            margin: none;
+            line-height: 1;
+        }
+
+        span {
+            display: block;
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: rgb(241, 241, 241);
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin: 1rem;
+        }
+    }
+
+    .details-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        object-position: center;
+        object-fit: cover;
+        filter: brightness(50%);
+        z-index: -1;
+    }
 }
 
 .errorPage {

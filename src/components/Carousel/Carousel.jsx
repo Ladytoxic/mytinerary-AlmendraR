@@ -9,11 +9,11 @@ const Carousel = () => {
   const [index, setIndex] = useState(0);
   const navigate = useNavigate();
 
-  const { data } = useAxiosHook({ URL_API: '/data_cities.json' });
+  const { data } = useAxiosHook({ URL_API: 'http://localhost:3000/cities' });
 
   useEffect(() => {
     if (data) {
-      setCities(data);
+      setCities(data.cities);
       console.log(data)
     }
   },

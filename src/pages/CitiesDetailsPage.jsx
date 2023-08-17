@@ -19,10 +19,14 @@ const CitiesDetailsPage = () => {
   }
 
   return (
-    <div className="citiesPage" key={city?._id}>
-      <h1>{city.name}</h1>
-      <span>{city.country}</span>
-      <p>{city.description}</p>
+    <div className="details" key={city?._id}>
+      <img className="details-img" src={city.image} alt={"image " + city.name} />
+      <div className="details-body">
+        <h1>{city.name}</h1>
+        <span>{city.country}</span>
+        <p>{city.description}</p>
+        <button className="btn">View Itinerary</button>
+      </div>
     </div>
   )
 }
