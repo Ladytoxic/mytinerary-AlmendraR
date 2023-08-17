@@ -1,0 +1,10 @@
+.error-message {
+    margin: 1rem;
+}
+
+.error-message h4 {
+    text-align: center;
+    color: rgba(228, 2, 2, 0.879);
+    font-weight: 500;
+    z-index: 100;
+}

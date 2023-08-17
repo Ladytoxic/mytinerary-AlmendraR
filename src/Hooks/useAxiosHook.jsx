@@ -7,8 +7,12 @@ const useAxiosHook = ({ URL_API }) => {
 
   useEffect(() => {
     axios.get(URL_API)
-      .then(response => setData(response.data))
-      .catch(err => setError(err))
+      .then(response => {
+        if (response.data.success) {
+          setData(response.data);
+        }
+      })
+      .catch(err => setError(err.response))
   },
     [URL_API]
   );

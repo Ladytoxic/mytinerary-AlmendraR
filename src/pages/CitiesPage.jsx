@@ -1,19 +1,17 @@
 import Banner from "../components/Banner/Banner"
-import Search from "../components/Search/SearchInput"
 import CardList from "../components/CartList/CardList"
+import { Search } from "akar-icons"
 
 const CitiesPage = () => {
+
   return (
     <>
       <Banner />
       <main>
-        <section>
-          <Search />
-          <CardList />
-        </section>
+        <CardList />
       </main>
     </>
   )
 }
 
-export default CitiesPage
+export default CitiesPage;

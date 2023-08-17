@@ -7,3 +7,37 @@
     flex-wrap: wrap;
     max-width: 1000px;
 }
+
+.search {
+    margin: 1rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+    max-width: 400px;
+}
+
+.search input[type='text'] {
+    background: none;
+    padding: 0.5rem 1rem;
+    border: solid 2px #646cff;
+    border-radius: 1rem;
+    flex-grow: 2;
+}
+
+.search button {
+    background: none;
+    border: none;
+    margin: none;
+    color: #646cff;
+    border-radius: 50%;
+    transition: 0.3s all;
+    flex-grow: 1;
+}
+
+.search button:hover {
+    transform: scale(1.1);
+}
+

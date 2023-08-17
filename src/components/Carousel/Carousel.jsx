@@ -9,17 +9,16 @@ const Carousel = () => {
   const [index, setIndex] = useState(0);
   const navigate = useNavigate();
 
-  const { data, error } = useAxiosHook({ URL_API: '/data_cities.json' });
+  const { data } = useAxiosHook({ URL_API: '/data_cities.json' });
 
   useEffect(() => {
     if (data) {
       setCities(data);
+      console.log(data)
     }
-  }, [data]);
-
-  if (error) {
-    return <p>Hubo un error: {error.message}</p>;
-  }
+  },
+    [data]
+  );
 
   const nextImage = () => {
     const remainingCities = cities.length - index;
