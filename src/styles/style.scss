@@ -89,8 +89,7 @@ h1 {
         max-width: 500px;
 
         h1 {
-            margin: none;
-            line-height: 1;
+            line-height: 1.1;
         }
 
         span {
@@ -99,6 +98,17 @@ h1 {
             font-weight: 500;
             color: #ffffffe5;
             margin-bottom: 1rem;
+        }
+
+        .details-currency {
+            font-size: 1rem;
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+
         }
 
         p {
