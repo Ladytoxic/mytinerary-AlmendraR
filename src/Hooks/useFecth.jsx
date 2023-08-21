@@ -12,7 +12,10 @@ const useFetch = ({ URL_API }) => {
           setData(response.data);
         }
       })
-      .catch(err => setError(err.response))
+      .catch(err => {
+        setData(null);
+        setError(err.response);
+      })
   },
     [URL_API]
   );

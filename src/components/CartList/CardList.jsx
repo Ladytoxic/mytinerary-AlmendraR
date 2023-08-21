@@ -49,7 +49,7 @@ const CardList = () => {
           <span className='search-icon'>
             <Search strokeWidth={2} size={25} />
           </span>
-          <input onChange={handleSearchChange} className='input-search' type="text" placeholder='Search City' />
+          <input onChange={handleSearchChange} value={searchInput} className='input-search' type="text" placeholder='Search City' />
           {showResetButton && (
             <button className='reset-input' onClick={handleReset}>
               <XSmall strokeWidth={2} size={35} />
