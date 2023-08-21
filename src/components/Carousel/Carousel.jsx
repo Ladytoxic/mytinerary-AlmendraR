@@ -14,7 +14,6 @@ const Carousel = () => {
   useEffect(() => {
     if (data) {
       setCities(data.cities.slice(0, 12));
-      console.log(data)
     }
   },
     [data]

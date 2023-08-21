@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import useFetch from "../Hooks/useFecth";
+import { Money } from "akar-icons";
 
 const CitiesDetailsPage = () => {
   const [city, setCity] = useState({});
@@ -12,11 +13,13 @@ const CitiesDetailsPage = () => {
     if (data) {
       setCity(data.city);
     }
-  }, [data]);
 
-  if (error) {
-    return <p>Hubo un error: {error.message}</p>;
-  }
+    if (error) {
+      setErrorCities(error);
+    }
+  },
+    [data, error]
+  );
 
   return (
     <div className="details" key={city?._id}>
@@ -25,6 +28,7 @@ const CitiesDetailsPage = () => {
         <h1>{city.name}</h1>
         <span>{city.country}</span>
         <p>{city.description}</p>
+        <span className="details-currency" ><Money strokeWidth={2} size={25} />  {city.currency}</span>
         <button className="btn">View Itinerary</button>
       </div>
     </div>
