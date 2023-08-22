@@ -23,13 +23,14 @@ const CitiesDetailsPage = () => {
 
   return (
     <div className="details" key={city?._id}>
-      <img className="details-img" src={city.image} alt={"image " + city.name} />
+      <img className="details-img" src={city?.image} alt={"image " + city.name} />
       <div className="details-body">
-        <h1>{city.name}</h1>
-        <span>{city.country}</span>
-        <p>{city.description}</p>
-        <span className="details-currency" ><Money strokeWidth={2} size={25} />  {city.currency}</span>
+        <h1>{city?.name}</h1>
+        <span>{city?.country}</span>
+        <p>{city?.description}</p>
+        <span className="details-currency" ><Money strokeWidth={2} size={25} />  {city?.currency}</span>
         <button className="btn">View Itinerary</button>
+        <h2 className="page-contriction">Page under construction🏗️</h2>
       </div>
     </div>
   )
