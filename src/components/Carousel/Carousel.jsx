@@ -3,6 +3,7 @@ import { CircleChevronLeftFill, CircleChevronRightFill } from 'akar-icons';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useFetch from '../../Hooks/useFecth';
+import ErrorMessage from '../ErrorMessage/ErrorMessage';
 
 const Carousel = () => {
   const [cities, setCities] = useState([]);
@@ -45,15 +46,18 @@ const Carousel = () => {
     <section className='carousel fade-in'>
       <h2>Popular Mytineraries</h2>
       <div className='carousel-container'>
-        {cities.slice(index, index + 4).map((img) => (
-          <div key={img._id} className='carousel-card' onClick={() => detaillsCity(img._id)}>
-            <img className='carousel-card-img' src={img.image} alt={`image ${img.name}`} />
-            <div className='carousel-card-body'>
-              <h3 className='carousel-card-title'>{img.name}</h3>
-              <span className='carousel-card-country'>{img.country}</span>
+        {cities.length > 0 ?
+          cities?.slice(index, index + 4).map((img) => (
+            <div key={img._id} className='carousel-card' onClick={() => detaillsCity(img._id)}>
+              <img className='carousel-card-img' src={img.image} alt={`image ${img.name}`} />
+              <div className='carousel-card-body'>
+                <h3 className='carousel-card-title'>{img.name}</h3>
+                <span className='carousel-card-country'>{img.country}</span>
+              </div>
             </div>
-          </div>
-        ))}
+          ))
+          : <ErrorMessage message={'No cities found'} />
+        }
 
         {
           (index > 0 &&

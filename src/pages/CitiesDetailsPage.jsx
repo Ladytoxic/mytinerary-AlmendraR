@@ -30,7 +30,6 @@ const CitiesDetailsPage = () => {
         <p>{city?.description}</p>
         <span className="details-currency" ><Money strokeWidth={2} size={25} />  {city?.currency}</span>
         <button className="btn">View Itinerary</button>
-        <h2 className="page-contriction">Page under construction🏗️</h2>
       </div>
     </div>
   )

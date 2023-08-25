@@ -10,10 +10,10 @@ const useFetch = ({ URL_API }) => {
       .then(response => {
         if (response.data.success) {
           setData(response.data);
+          setError(null);
         }
       })
       .catch(err => {
-        setData(null);
         setError(err.response);
       })
   },
