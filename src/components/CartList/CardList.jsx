@@ -62,7 +62,7 @@ const CardList = () => {
             </button>
           )}
           <button onClick={handleSearch} className='search-icon'>
-            <Search strokeWidth={2} size={25} />
+            <Search strokeWidth={2} size={25} />Search
           </button>
         </div>
       </section>
