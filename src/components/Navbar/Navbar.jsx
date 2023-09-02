@@ -2,7 +2,7 @@ import './Navbar.css';
 import LinksList from '../LinksList/LinksList';
 import { Person } from 'akar-icons';
 import { Link, useNavigate } from 'react-router-dom';
-import icon from '../../assets/Icon.svg';
+import icon from '../../assets/undraw_world_re_768g.svg';
 
 function Navbar() {
     const links = [

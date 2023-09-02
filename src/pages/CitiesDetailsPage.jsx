@@ -1,25 +1,39 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import useFetch from "../Hooks/useFecth";
 import { Money } from "akar-icons";
+import { useDispatch, useSelector } from 'react-redux';
+import { get_city } from "../store/acitions/citiesActions";
+
 
 const CitiesDetailsPage = () => {
-  const [city, setCity] = useState({});
   const { _id } = useParams();
+  const city = useSelector((store) => store.citiesReducer.city);
 
-  const { data, error } = useFetch({ URL_API: 'http://localhost:3000/cities/' + _id });
+  const dispatch = useDispatch();
+
 
   useEffect(() => {
-    if (data) {
-      setCity(data.city);
-    }
-
-    if (error) {
-      setErrorCities(error);
-    }
+    dispatch(get_city({
+      id: _id
+    }));
   },
-    [data, error]
+    [dispatch]
   );
+  // const [city, setCity] = useState({});
+
+  // const { data, error } = useFetch({ URL_API: 'http://localhost:3000/cities/' + _id });
+
+  // useEffect(() => {
+  //   if (data) {
+  //     setCity(data.city);
+  //   }
+
+  //   if (error) {
+  //     setErrorCities(error);
+  //   }
+  // },
+  //   [data, error]
+  // );
 
   return (
     <div className="details" key={city?._id}>

@@ -2,52 +2,30 @@ import './CardList.css';
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import Card from '../Card/Card';
-import useFetch from '../../Hooks/useFecth';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import { Search, XSmall } from 'akar-icons';
+import { useDispatch, useSelector } from 'react-redux';
+import { get_cities, filter_cities } from '../../store/acitions/citiesActions';
+
 
 const CardList = () => {
-  const [cities, setCities] = useState([]);
-  const [errorCities, setErrorCities] = useState(null);
+  const cities = useSelector((store) => store.citiesReducer.cities);
 
-  const [searchInput, setSearchInput] = useState('');
-  const [showResetButton, setShowResetButton] = useState(false);
+  const dispatch = useDispatch();
+
   const inputSearch = useRef('');
 
-
-  const { data, error } = useFetch({ URL_API: `http://localhost:3000/cities?name=${searchInput}&country=` });
-
   useEffect(() => {
-    if (data) {
-      setCities(data.cities);
-      setErrorCities(null);
-    }
-
-    if (error) {
-      setErrorCities(error);
-      setCities([]);
-    }
+    dispatch(get_cities());
   },
-    [data, error]
+    [dispatch]
   );
 
-  const handleSearchChange = (e) => {
-    const inputValue = e.target.value.trim();
-    setShowResetButton(inputValue !== '');
-    setSearchInput(inputValue);
-  }
-
   const handleSearch = () => {
-    const name = inputSearch.current.value;
-    console.log(name)
+    dispatch(filter_cities({
+      name: inputSearch.current.value
+    }))
   }
-
-  const handleReset = () => {
-    setSearchInput('');
-    setErrorCities(null);
-    setShowResetButton(false);
-  };
-
 
   return (
     <>
@@ -55,12 +33,7 @@ const CardList = () => {
         <div className='search'>
           <span className='search-icon'>
           </span>
-          <input ref={inputSearch} onChange={handleSearchChange} value={searchInput} className='input-search' type="text" placeholder='Search City' />
-          {showResetButton && (
-            <button className='reset-input' onClick={handleReset}>
-              <XSmall strokeWidth={2} size={35} />
-            </button>
-          )}
+          <input ref={inputSearch} className='input-search' type="text" placeholder='Search City' />
           <button onClick={handleSearch} className='search-icon'>
             <Search strokeWidth={2} size={25} />Search
           </button>
@@ -73,7 +46,7 @@ const CardList = () => {
               <Card _id={img._id} name={img.name} country={img.country} image={img.image} currency={img.currency} />
             </Link>
           )) :
-          (<ErrorMessage message={errorCities?.data?.message} />)
+          (<ErrorMessage message='No cities found' />)
         }
       </section>
     </>
