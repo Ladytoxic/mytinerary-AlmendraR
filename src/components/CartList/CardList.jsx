@@ -1,11 +1,11 @@
 import './CardList.css';
 import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import Card from '../Card/Card';
-import ErrorMessage from '../ErrorMessage/ErrorMessage';
-import { Search, XSmall } from 'akar-icons';
+import { Search } from 'akar-icons';
 import { useDispatch, useSelector } from 'react-redux';
 import { get_cities, filter_cities } from '../../store/acitions/citiesActions';
+import Card from '../Card/Card';
+import ErrorMessage from '../ErrorMessage/ErrorMessage';
 
 
 const CardList = () => {
@@ -31,8 +31,6 @@ const CardList = () => {
     <>
       <section className='filtter'>
         <div className='search'>
-          <span className='search-icon'>
-          </span>
           <input ref={inputSearch} className='input-search' type="text" placeholder='Search City' />
           <button onClick={handleSearch} className='search-icon'>
             <Search strokeWidth={2} size={25} />Search
