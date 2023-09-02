@@ -1,5 +1,5 @@
 import './CardList.css';
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import Card from '../Card/Card';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
@@ -46,7 +46,7 @@ const CardList = () => {
               <Card _id={img._id} name={img.name} country={img.country} image={img.image} currency={img.currency} />
             </Link>
           )) :
-          (<ErrorMessage message='No cities found' />)
+          (<ErrorMessage message={'No cities found'} />)
         }
       </section>
     </>

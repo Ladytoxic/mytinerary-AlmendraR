@@ -18,7 +18,9 @@ function Navbar() {
     return (
         <nav className='fade-in-top'>
             <Link className='navbar-title' href="/">
-                <img className='icon' src={icon} alt="icon" />MyTinerary</Link>
+                <img className='icon' src={icon} alt="icon" />
+                <span className='title-text'>MyTinerary</span>
+            </Link>
             <div className='menu'>
                 <LinksList links={links} className='item-links-nav' />
                 <button className='btn-login' onClick={login}>

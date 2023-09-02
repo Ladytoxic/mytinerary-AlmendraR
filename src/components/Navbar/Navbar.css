@@ -43,3 +43,9 @@ nav .menu .btn-login:hover {
     background-color: #ffffff;
     color: #646cff;
 }
+
+@media only screen and (max-width: 500px) {
+    nav .navbar-title .title-text {
+        display: none;
+    }
+}
