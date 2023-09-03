@@ -1,0 +1,97 @@
+.itineraries {
+    background-image: linear-gradient(to top, #edeeee, #f3f4f4, #fafbfa, #fbfcfc, #fcfdfd, #fefefe, #ffffff);
+    text-align: center;
+    padding: 2rem 0.5rem;
+    min-height: 100vh;
+}
+
+.itineraries .section-title {
+    font-size: 3.5rem;
+    margin: 1rem;
+}
+
+.itineraries .card-itinerary {
+    margin: auto;
+    max-width: 800px;
+    position: relative;
+    background-color: #ffffff;
+    border-radius: 1rem;
+    box-shadow: 0 0.2rem 0.5rem #939393;
+    padding-bottom: 1rem;
+}
+
+.itineraries .card-itinerary .card-itinerary-body {
+    padding: 1rem;
+}
+
+.itineraries .card-itinerary .card-itinerary-title {
+    font-size: 2rem;
+}
+
+.itineraries .card-itinerary .card-itinerary-hashtags,
+.itineraries .card-itinerary .card-itinerary-price {
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.itineraries .card-itinerary .price {
+    color: green;
+}
+
+.itineraries .card-itinerary .hashtag {
+    font-size: 0.8rem;
+    display: flex;
+    font-weight: 500;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: #dfe0ffe0;
+    cursor: pointer;
+}
+
+.itineraries .card-itinerary .card-itinerary-duration,
+.itineraries .card-itinerary .card-itinerary-likes {
+    display: flex;
+    gap: 0.5rem;
+
+}
+
+.itineraries .card-itinerary .card-itinerary-profile {
+    text-align: start;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 1rem;
+    cursor: pointer;
+    width: 100%;
+    background-color: rgb(226, 171, 244);
+    border-radius: 1rem 1rem 0 0;
+}
+
+.itineraries .card-itinerary .card-itinerary-profile em {
+    color: gray;
+}
+
+.itineraries .card-itinerary .card-itinerary-details {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 0.5rem;
+}
+
+.itineraries .card-itinerary .card-itinerary-img-profile {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    filter: drop-shadow(0 0 0.1rem);
+}
+
+.itineraries .card-itinerary .view-activities {
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
