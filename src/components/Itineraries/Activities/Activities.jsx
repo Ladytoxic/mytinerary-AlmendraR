@@ -1,8 +1,9 @@
 
 const Activities = () => {
   return (
-    <div>
-
+    <div className="activities">
+      <h4>Activities</h4>
+      <p>Under Construction🚧</p>
     </div>
   )
 }

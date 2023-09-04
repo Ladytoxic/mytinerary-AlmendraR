@@ -44,7 +44,7 @@ h1 {
     background-color: #646cff;
     color: #ffffff;
     transition: all 0.3s;
-    
+
 }
 
 .btn-welcome:hover,
@@ -140,6 +140,45 @@ h1 {
         filter: brightness(50%);
         z-index: -1;
     }
+
+}
+
+main {
+    .itineraries {
+        background-image: linear-gradient(to top, #edeeee, #f3f4f4, #fafbfa, #fbfcfc, #fcfdfd, #fefefe, #ffffff);
+        text-align: center;
+        padding: 2rem 0.5rem;
+        min-height: 100vh;
+
+        .section-title {
+            font-size: 3rem;
+            margin: 1rem;
+        }
+
+        .itinerary-activities {
+            margin: 1rem 0;
+
+            .activities,
+            .comments {
+                padding: 1rem;
+                background-color: #c7c9fb;
+            }
+
+            h4 {
+                font-size: 2rem;
+            }
+            h5{
+                font-size: 1.5rem;
+            }
+
+            p {
+                font-size: 1.3rem;
+            }
+
+        }
+    }
+
+
 }
 
 .errorPage {

@@ -1,11 +1,34 @@
-import { createAction } from "@reduxjs/toolkit";
+import { createReducer } from "@reduxjs/toolkit";
+import { get_user, get_users, filter_users } from "../acitions/userActions";
 
-export const user_photo = createAction('user_photo', (obj) => {
-    console.log(obj)
+const initialState = {
+    users: [],
+    user: ''
+}
 
-    return {
-        payload: {
-            photo: obj.photo
-        }
-    }
-})
+const usersReducer = createReducer(initialState,
+    (builder) => builder
+        .addCase(get_users.fulfilled, (state, action) => {
+
+            return {
+                ...state,
+                users: action.payload.users
+            }
+        })
+        .addCase(filter_users.fulfilled, (state, action) => {
+
+            return {
+                ...state,
+                users: action.payload.users
+            }
+        })
+        .addCase(get_user.fulfilled, (state, action) => {
+
+            return {
+                ...state,
+                user: action.payload.user
+            }
+        })
+)
+
+export default usersReducer;

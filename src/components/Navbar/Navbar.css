@@ -17,6 +17,7 @@ nav .navbar-title {
     text-decoration: inherit;
     display: flex;
     align-items: center;
+    font-size: 1.5rem;
 }
 
 nav .navbar-title .icon {

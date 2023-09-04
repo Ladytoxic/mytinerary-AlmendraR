@@ -1,17 +1,5 @@
-.itineraries {
-    background-image: linear-gradient(to top, #edeeee, #f3f4f4, #fafbfa, #fbfcfc, #fcfdfd, #fefefe, #ffffff);
-    text-align: center;
-    padding: 2rem 0.5rem;
-    min-height: 100vh;
-}
-
-.itineraries .section-title {
-    font-size: 3.5rem;
-    margin: 1rem;
-}
-
 .itineraries .card-itinerary {
-    margin: auto;
+    margin: 2rem auto;
     max-width: 800px;
     position: relative;
     background-color: #ffffff;
@@ -26,6 +14,14 @@
 
 .itineraries .card-itinerary .card-itinerary-title {
     font-size: 2rem;
+}
+
+.itineraries .card-itinerary .card-itinerary-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .itineraries .card-itinerary .card-itinerary-hashtags,
@@ -62,7 +58,6 @@
 .itineraries .card-itinerary .card-itinerary-profile {
     text-align: start;
     display: flex;
-    align-items: center;
     gap: 0.7rem;
     padding: 1rem;
     cursor: pointer;
@@ -73,6 +68,7 @@
 
 .itineraries .card-itinerary .card-itinerary-profile em {
     color: gray;
+    font-size: 0.7rem;
 }
 
 .itineraries .card-itinerary .card-itinerary-details {

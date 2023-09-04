@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Money } from "akar-icons";
 import { useDispatch, useSelector } from 'react-redux';
@@ -11,8 +11,8 @@ const CitiesDetailsPage = () => {
   const { _id } = useParams();
   const city = useSelector((store) => store.citiesReducer.city);
 
-  const dispatch = useDispatch();
 
+  const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(get_city({
@@ -21,6 +21,13 @@ const CitiesDetailsPage = () => {
   },
     [dispatch]
   );
+
+  const viewItineraries = () => {
+    window.scrollTo({
+      top: window.innerHeight,
+      behavior: 'smooth',
+    })
+  }
 
   return (
     <>
@@ -32,25 +39,34 @@ const CitiesDetailsPage = () => {
             <span>{city?.country}</span>
             <p>{city?.description}</p>
             <span className="details-currency" ><Money strokeWidth={2} size={25} />  {city?.currency}</span>
-            <button className="btn">View Itinerary</button>
+            <button className="btn" onClick={viewItineraries}>View Itinerary</button>
           </div>
         </header>
       ) : <ErrorMessage message={'No city found'} />
       )}
-      <main>
-        <Itineraries
-        
-          _id={'123'}
-          city={city?.name}
-          title={'Paseo por calles de tierra'}
-          description={'Caminata por un barrio picante, calles de primer mundo (Cuidad tus pertenecias) fisuras en todas las esquinas'}
-          name={'Almendra Limón🍋'}
-          img={'https://almendraromina.firebaseapp.com/assets/img/Default_stunningly_beautiful_woman_posing_like_a_professional_model_3_5a02cfef-2199-46b9-919c-7b13dac32d3c_1.jpg'}
-          duration={4}
-          likes={5}
-          price={3}
-        />
-      </main>
+      {city &&
+        (<main>
+          <section className="itineraries" key={city.itineraries}>
+            <h2 className='section-title'>{city.name + ' itineraries'}</h2>
+            {city.itineraries?.length > 0 ?
+              city.itineraries?.map((itinerary) => (
+                <Itineraries
+                  key={itinerary._id}
+                  city={city?.name}
+                  title={itinerary.name}
+                  description={itinerary.description}
+                  name={itinerary.user.name}
+                  img={itinerary.user.image}
+                  duration={itinerary.duration}
+                  likes={itinerary.likes}
+                  price={itinerary.price}
+                  hashtags={itinerary.hashtags}
+                />
+              )) :
+              <ErrorMessage message={'No itineraries found'} />
+            }
+          </section>
+        </main>)}
     </>
   )
 }

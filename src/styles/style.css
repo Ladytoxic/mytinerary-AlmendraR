@@ -135,6 +135,34 @@ h1 {
   z-index: -1;
 }
 
+main .itineraries {
+  background-image: linear-gradient(to top, #edeeee, #f3f4f4, #fafbfa, #fbfcfc, #fcfdfd, #fefefe, #ffffff);
+  text-align: center;
+  padding: 2rem 0.5rem;
+  min-height: 100vh;
+}
+main .itineraries .section-title {
+  font-size: 3rem;
+  margin: 1rem;
+}
+main .itineraries .itinerary-activities {
+  margin: 1rem 0;
+}
+main .itineraries .itinerary-activities .activities,
+main .itineraries .itinerary-activities .comments {
+  padding: 1rem;
+  background-color: #c7c9fb;
+}
+main .itineraries .itinerary-activities h4 {
+  font-size: 2rem;
+}
+main .itineraries .itinerary-activities h5 {
+  font-size: 1.5rem;
+}
+main .itineraries .itinerary-activities p {
+  font-size: 1.3rem;
+}
+
 .errorPage {
   min-height: 80vh;
   padding: 2rem 1rem;
