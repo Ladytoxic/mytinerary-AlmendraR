@@ -3,6 +3,7 @@
     min-height: 40vh;
     color: white;
     text-shadow:  0 0 0.2rem rgb(56, 56, 56);
+    box-shadow: 0 0.2rem 0.4rem rgb(56, 56, 56);
 }
 .headerPage .banner-img {
     object-fit: cover;

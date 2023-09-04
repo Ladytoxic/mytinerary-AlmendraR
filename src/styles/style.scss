@@ -19,7 +19,7 @@ html {
 }
 
 body {
-    background-color: #ffffff;
+    background-color: #ededed;
     color: black;
 }
 
@@ -81,11 +81,12 @@ h1 {
     justify-content: center;
     align-items: center;
     color: white;
-    text-shadow: 0 0 0.4rem black;
+    text-shadow: 0 0 0.4rem rgb(56, 56, 56);
     position: relative;
     min-height: 100vh;
     text-align: center;
     position: relative;
+    box-shadow: 0 0.2rem 0.4rem rgb(56, 56, 56);
 
     .details-body {
         max-width: 500px;
@@ -144,10 +145,13 @@ h1 {
 }
 
 main {
+    background-image: linear-gradient(to top, #edeeee, #f3f4f4, #fafbfa, #fbfcfc, #fcfdfd, #fefefe, #ffffff);
+    padding: 1rem 0;
+
     .itineraries {
         background-image: linear-gradient(to top, #edeeee, #f3f4f4, #fafbfa, #fbfcfc, #fcfdfd, #fefefe, #ffffff);
         text-align: center;
-        padding: 2rem 0.5rem;
+        padding: 0.5rem;
         min-height: 100vh;
 
         .section-title {
