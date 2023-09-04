@@ -147,11 +147,12 @@ main .itineraries .section-title {
 }
 main .itineraries .itinerary-activities {
   margin: 1rem 0;
+  animation: fade-in-top 0.6s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 main .itineraries .itinerary-activities .activities,
 main .itineraries .itinerary-activities .comments {
   padding: 1rem;
-  background-color: #c7c9fb;
+  background-color: #ebebeb;
 }
 main .itineraries .itinerary-activities h4 {
   font-size: 2rem;

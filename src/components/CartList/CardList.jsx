@@ -7,7 +7,6 @@ import { get_cities, filter_cities } from '../../store/acitions/citiesActions';
 import Card from '../Card/Card';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 
-
 const CardList = () => {
   const cities = useSelector((store) => store.citiesReducer.cities);
 
@@ -24,14 +23,20 @@ const CardList = () => {
   const handleSearch = () => {
     dispatch(filter_cities({
       name: inputSearch.current.value
-    }))
+    }));
+  }
+
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      handleSearch();
+    }
   }
 
   return (
     <>
       <section className='filtter'>
         <div className='search'>
-          <input ref={inputSearch} className='input-search' type="text" placeholder='Search City' />
+          <input ref={inputSearch} onKeyPress={handleKeyPress} className='input-search' type="text" placeholder='Search City' />
           <button onClick={handleSearch} className='search-icon'>
             <Search strokeWidth={2} size={25} />Search
           </button>
