@@ -71,6 +71,31 @@ h1 {
     text-align: center;
 }
 
+.loginHeader {
+    margin: auto;
+    max-width: 100px;
+    padding: 1rem;
+
+    .icon-login {
+        width: 120px;
+        height: 120px;
+        object-fit: contain;
+    }
+
+    .navbar-signIn {
+        width: 100%;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+
+        .btn-goBack {
+            border: none;
+            background-color: none;
+        }
+    }
+}
+
+
 .link {
     text-decoration: none;
     color: #646cff;
