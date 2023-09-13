@@ -36,7 +36,7 @@ const CardList = () => {
     <>
       <section className='filtter'>
         <div className='search'>
-          <input ref={inputSearch} onKeyPress={handleKeyPress} className='input-search' type="text" placeholder='Search City' />
+          <input ref={inputSearch} onKeyPress={handleKeyPress} className='input-text' type="text" placeholder='Search City' />
           <button onClick={handleSearch} className='search-icon'>
             <Search strokeWidth={2} size={25} />Search
           </button>

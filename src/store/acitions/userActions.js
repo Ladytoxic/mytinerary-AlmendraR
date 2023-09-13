@@ -1,37 +1,29 @@
-import { createAsyncThunk } from "@reduxjs/toolkit";
+import { createAsyncThunk, createAction } from "@reduxjs/toolkit";
 import axios from "axios";
 
-export const get_users = createAsyncThunk('get_users', async () => {
+export const user_login = createAsyncThunk('user_login', async (obj) => {
     try {
-        const response = await axios.get('http://localhost:3000/users')
-        return {
-            users: response.data.users
-        }
-    } catch (error) {
-        console.log(error)
-    }
-});
+        const { data } = await axios.post('http://localhost:3000/auth/signin', obj.data);
+        console.log(data);
+        localStorage.setItem('token', data.response.token)
+        localStorage.setItem('user', JSON.stringify(data.response.user))
 
-export const filter_users = createAsyncThunk('filter_users', async (obj) => {
-    try {
-        const response = await axios.get(`http://localhost:3000/users?name=${obj.name}`)
         return {
-            users: response.data.users
+            user: data.response.user,
+            token: data.response.token
         }
     } catch (error) {
+        console.log(error.response.data);
         return {
-            users: []
+            user: null
         }
     }
-});
+})
 
-export const get_user = createAsyncThunk('get_user', async (obj) => {
-    try {
-        const response = await axios.get(`http://localhost:3000/users/${obj.id}`)
-        return {
-            user: response.data.user
+export const user_token = createAction('user_token', (user) => {
+    return {
+        payload: {
+            user
         }
-    } catch (error) {
-        console.log(error)
     }
-});
+})

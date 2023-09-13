@@ -1,32 +1,27 @@
 import { createReducer } from "@reduxjs/toolkit";
-import { get_user, get_users, filter_users } from "../acitions/userActions";
+import { user_login, user_token } from "../acitions/userActions";
 
 const initialState = {
     users: [],
-    user: ''
+    user: null,
+    token: null
 }
 
 const usersReducer = createReducer(initialState,
     (builder) => builder
-        .addCase(get_users.fulfilled, (state, action) => {
+        .addCase(user_login.fulfilled, (state, action) => {
 
             return {
                 ...state,
-                users: action.payload.users
+                user: action.payload.user,
+                token: action.payload.token
             }
         })
-        .addCase(filter_users.fulfilled, (state, action) => {
+        .addCase(user_token, (state, action) => {
 
             return {
                 ...state,
-                users: action.payload.users
-            }
-        })
-        .addCase(get_user.fulfilled, (state, action) => {
-
-            return {
-                ...state,
-                user: action.payload.user
+                user: action.payload.user,
             }
         })
 )

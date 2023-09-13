@@ -19,10 +19,8 @@ html {
 }
 
 body {
-    background-color: #ededed;
-    color: black;
+    color: #0f0f0f;
 }
-
 
 h1 {
     font-size: 3rem;
@@ -64,35 +62,145 @@ h1 {
     outline: 5px auto -webkit-focus-ring-color;
 }
 
+.input-text {
+    background: none;
+    padding: 0.5rem 1rem;
+    border: solid 2px #646cff;
+    border-radius: 1rem;
+    flex-grow: 3;
+}
+
 .citiesPage,
 .loginPage {
-    padding: 2rem 1rem;
     animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
     text-align: center;
 }
 
-.loginHeader {
-    margin: auto;
-    max-width: 100px;
-    padding: 1rem;
-
-    .icon-login {
-        width: 120px;
-        height: 120px;
-        object-fit: contain;
-    }
-
-    .navbar-signIn {
-        width: 100%;
+.loginPage {
+    header {
         display: flex;
-        justify-content: start;
+        justify-content: center;
         align-items: center;
+        flex-wrap: wrap;
 
-        .btn-goBack {
-            border: none;
-            background-color: none;
+        .img_logo {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
         }
     }
+
+    main {
+        display: flex;
+
+        .sign {
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            padding: 1rem;
+            box-shadow: 0 0.2rem 0.4rem #c6c6c6;
+            border-radius: 1rem;
+
+            .login,
+            .register {
+                max-width: 450px;
+
+            }
+
+            .switch-sign {
+                margin: 1rem auto;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                width: 100%;
+                border-radius: 3rem;
+                box-shadow: 0 0.1rem 0.2rem #bfbfbf;
+                background-color: #646cff;
+                max-width: 200px;
+                position: relative;
+                height: 40px;
+
+                span {
+                    color: #e0e0e0;
+                    font-weight: 500;
+                    font-size: 0.8rem;
+                }
+
+                .btn-switch {
+                    border: #646cff solid 2px;
+                    background-color: #ffffff;
+                    border-radius: 3rem;
+                    color: #646cff;
+                    width: 50%;
+                    padding: 0.6rem;
+                    font-size: 0.8rem;
+                    font-weight: 500;
+                    position: absolute;
+                    transition: all 2s;
+                    transform: scale(1.1);
+                }
+
+                .switch-right {
+                    top: -0.1rem;
+                    right: -0.1rem;
+                }
+
+                .switch-left {
+                    top: -0.1rem;
+                    left: -0.1rem;
+                }
+            }
+
+            .or {
+                margin-bottom: 1rem;
+            }
+
+            .google-signin {
+                margin: auto;
+                transition: all 0.2s;
+            }
+
+            .google-signin:hover,
+            input[type='submit']:hover {
+                transform: scale(1.1);
+
+            }
+        }
+
+        .form-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            text-wrap: wrap;
+        }
+
+        input[type='email'],
+        input[type='password'],
+        input[type='text'] {
+            text-align: start;
+            width: 100%;
+            margin: 0.5rem 0;
+        }
+
+        .select-countries {
+            max-width: 40%;
+            padding: 0.5rem;
+            border: #646cff solid 2px;
+            border-radius: 2rem;
+        }
+
+        input[type='submit'] {
+            text-align: center;
+            width: auto;
+        }
+    }
+
+}
+
+
+.btn-goBack {
+    padding: 1rem;
+    border: none;
+    background-color: none;
 }
 
 
@@ -110,7 +218,6 @@ h1 {
     position: relative;
     min-height: 100vh;
     text-align: center;
-    position: relative;
     box-shadow: 0 0.2rem 0.4rem rgb(56, 56, 56);
 
     .details-body {
