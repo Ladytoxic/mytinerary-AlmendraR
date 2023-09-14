@@ -1,5 +1,6 @@
 import { createAsyncThunk, createAction } from "@reduxjs/toolkit";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 export const user_login = createAsyncThunk('user_login', async (obj) => {
     try {
@@ -7,13 +8,25 @@ export const user_login = createAsyncThunk('user_login', async (obj) => {
         console.log(data);
         localStorage.setItem('token', data.response.token)
         localStorage.setItem('user', JSON.stringify(data.response.user))
-
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: data.message,
+            showConfirmButton: false,
+            timer: 1500
+          })
+        
         return {
             user: data.response.user,
             token: data.response.token
         }
     } catch (error) {
         console.log(error.response.data);
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: error.response.data.message,
+          })
         return {
             user: null
         }
