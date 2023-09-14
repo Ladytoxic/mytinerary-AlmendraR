@@ -22,8 +22,6 @@ const Register = () => {
     })
   }
 
-  // console.log(useSelector((store) => store.userReducers))
-
   const handelSignUp = async (e) => {
     e.preventDefault();
     try {
