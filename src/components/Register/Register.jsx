@@ -1,7 +1,7 @@
 import './Register.css';
 import { useState } from 'react';
 import { useDispatch, useSelector } from "react-redux"
-import { user_login } from "../../store/acitions/userActions";
+import { user_login, user_register } from "../../store/acitions/userActions";
 
 const Register = () => {
   const [formSignUp, setFormSingIn] = useState({
@@ -27,7 +27,7 @@ const Register = () => {
   const handelSignUp = async (e) => {
     e.preventDefault();
     try {
-      dispatch(user_login({
+      dispatch(user_register({
         data: formSignUp
       }))
     } catch (error) {
@@ -44,7 +44,7 @@ const Register = () => {
         </div>
         <div>
           <input onChange={handleInput} className='input-text' type="text" name="name" id="name" placeholder='Full name' />
-          <input onChange={handleInput} className='input-text' type="text" name="image_url" id="image_url" placeholder='Profile image URL' />
+          <input onChange={handleInput} className='input-text' type="text" name="image" id="image" placeholder='Profile image URL' />
           <label htmlFor="country">Country: </label>
           <select className='select-countries' name="country" id="country">
             <option disabled >Select country</option>
