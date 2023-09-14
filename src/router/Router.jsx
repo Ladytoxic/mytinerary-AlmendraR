@@ -7,6 +7,7 @@ import CitiesPage from '../pages/CitiesPage';
 import ErrorPage from '../pages/ErrorPage';
 import LoginRegisterPage from '../pages/LoginRegisterPage';
 import CitiesDetailsPage from '../pages/CitiesDetailsPage';
+import ProtectedRoute from './ProtectedRouter';
 
 const router = createBrowserRouter([
   {
@@ -29,7 +30,9 @@ const router = createBrowserRouter([
   },
   {
     path: '/login',
-    element: <LoginRegisterPage />
+    element: (<ProtectedRoute path='/'>
+      <LoginRegisterPage />
+    </ProtectedRoute>)
   },
   {
     path: '/*',
