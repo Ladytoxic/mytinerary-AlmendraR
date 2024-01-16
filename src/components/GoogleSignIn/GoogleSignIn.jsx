@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useRef } from "react";
+import apiUrl from "../../api";
 
 export const GoogleSignIn = () => {
     const googleButton = useRef();
@@ -9,7 +10,7 @@ export const GoogleSignIn = () => {
             token_id: response.credential
         }
 
-        const userResponse = await axios.post('http://localhost:3000/auth/google_signin', data);
+        const userResponse = await axios.post(`${apiUrl}/auth/google_signin`, data);
         console.log(userResponse)
     }
 
@@ -34,6 +35,6 @@ export const GoogleSignIn = () => {
     )
 
     return (
-        <div className="google-signin" ref={googleButton}></div>
+        <div className="google-signin" style={{ colorScheme: 'light' }} ref={googleButton}></div>
     )
 }

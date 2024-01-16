@@ -4,13 +4,14 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useFetch from '../../Hooks/useFecth';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
+import apiUrl from '../../api';
 
 const Carousel = () => {
   const [cities, setCities] = useState([]);
   const [index, setIndex] = useState(0);
   const navigate = useNavigate();
 
-  const { data } = useFetch({ URL_API: 'http://localhost:3000/cities' });
+  const { data } = useFetch({ URL_API: `${apiUrl}/cities` });
 
   useEffect(() => {
     if (data) {
