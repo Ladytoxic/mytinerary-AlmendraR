@@ -7,8 +7,7 @@ const Banner = () => {
       <img className='banner-img' src={bannerImg} alt="" />
       <div className='hero'>
         <h1 className='title'>Cities</h1>
-        <p className='subtitle'>Collection of the most beautiful<br />
-          place and experience.</p>
+        <em className='subtitle'>Collection of the most beautiful place and experience.</em>
       </div>
     </header>
   )

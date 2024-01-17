@@ -1,0 +1,86 @@
+[
+  {
+    "_id": "64d64859509385d54f78d8bb",
+    "name": "Paris",
+    "country": "France",
+    "description": "Paris, the City of Light, is famous for its iconic landmarks like the Eiffel Tower and the Louvre Museum.",
+    "image": "https://i.postimg.cc/B61qXhCp/earth-DXux-Hw3-S5ak-unsplash.jpg"
+  },
+  {
+    "_id": "64d64859509385d54f78d8bc",
+    "name": "New York",
+    "country": "United States",
+    "description": "New York City is a bustling metropolis known for its diverse neighborhoods, world-class museums, and iconic skyline.",
+    "image": "https://i.postimg.cc/gjVmKnQ6/luca-bravo-Ta-Ck3-Nsp-Ye0-unsplash.jpg"
+  },
+  {
+    "_id": "64d64859509385d54f78d8bd",
+    "name": "Tokyo",
+    "country": "Japan",
+    "description": "Tokyo is a vibrant city blending modern technology with traditional culture, offering unique experiences around every corner.",
+    "image": "https://i.postimg.cc/905cTG8h/erik-eastman-4-HG5hlhm-Zg8-unsplash.jpg"
+  },
+  {
+    "_id": "64d64859509385d54f78d8be",
+    "name": "Rome",
+    "country": "Italy",
+    "description": "Rome, the Eternal City, is steeped in history and is home to ancient ruins, stunning architecture, and delicious cuisine.",
+    "image": "https://i.postimg.cc/wBMxdxyS/caleb-miller-0-Bs3et8-FYyg-unsplash.jpg"
+  },
+  {
+    "_id": "64d64859509385d54f78d8bf",
+    "name": "Barcelona",
+    "country": "Spain",
+    "description": "Barcelona is known for its unique architecture, beautiful beaches, and vibrant arts and culinary scenes.",
+    "image": "https://i.postimg.cc/tT1gFR9h/mattia-bericchia-mnu-Iw2i-Tb7w-unsplash.jpg"
+  },
+  {
+    "_id": "64d64859509385d54f78d8c0",
+    "name": "Rio de Janeiro",
+    "country": "Brazil",
+    "description": "Rio de Janeiro boasts stunning beaches, lush landscapes, and the iconic Christ the Redeemer statue.",
+    "image": "https://i.postimg.cc/7LRHPvSb/agustin-diaz-gargiulo-7-F65-HDP0-E0-unsplash.jpg"
+  },
+  {
+    "_id": "64d64859509385d54f78d8c1",
+    "name": "Bangkok",
+    "country": "Thailand",
+    "description": "Bangkok is a city of contrasts, with bustling street markets, ornate temples, and a lively nightlife.",
+    "image": "https://i.postimg.cc/h4djjGyn/florian-wehde-y3sid-Wv-Dxg-unsplash.jpg"
+  },
+  {
+    "_id": "64d64859509385d54f78d8c2",
+    "name": "Cape Town",
+    "country": "South Africa",
+    "description": "Cape Town offers breathtaking natural beauty, including Table Mountain and stunning coastal landscapes.",
+    "image": "https://i.postimg.cc/JzP7gHnN/tobias-reich-1-Gg-Wb-P74ph-Y-unsplash.jpg"
+  },
+  {
+    "_id": "64d64859509385d54f78d8c3",
+    "name": "Sydney",
+    "country": "Australia",
+    "description": "Sydney is famous for its iconic Opera House, beautiful harbor, and vibrant cultural scene.",
+    "image": "https://i.postimg.cc/Prnq8k9w/leigh-Wp3x-WCVXMCI-unsplash.jpg"
+  },
+  {
+    "_id": "64d64859509385d54f78d8c4",
+    "name": "Istanbul",
+    "country": "Turkey",
+    "description": "Istanbul bridges two continents, offering a mix of rich history, stunning architecture, and vibrant markets.",
+    "image": "https://i.postimg.cc/W12bXw2p/linus-mimietz-a9b-LObi-MPJ4-unsplash.jpg"
+  },
+  {
+    "_id": "64d64859509385d54f78d8c5",
+    "name": "Copenhagen",
+    "country": "Denmark",
+    "description": "Copenhagen is known for its bike-friendly streets, innovative design, and cozy hygge lifestyle.",
+    "image": "https://i.postimg.cc/X7KYfz6D/jacob-buchhave-a-B2-EUX8-Lkg-unsplash.jpg"
+  },
+  {
+    "_id": "64d64859509385d54f78d8c6",
+    "name": "Petra",
+    "country": "Jordan",
+    "description": "The ancient city of Petra is a UNESCO World Heritage Site known for its impressive rock-cut architecture and history.",
+    "image": "https://i.postimg.cc/RFjZdr02/filippo-cesarini-c8-F1h-J-UTrk-unsplash.jpg"
+  }
+]

@@ -19,8 +19,7 @@ html {
 }
 
 body {
-  background-color: #ffffff;
-  color: black;
+  color: #0f0f0f;
 }
 
 h1 {
@@ -62,11 +61,128 @@ h1 {
   outline: 5px auto -webkit-focus-ring-color;
 }
 
+.input-text {
+  background: none;
+  padding: 0.5rem 1rem;
+  border: solid 2px #646cff;
+  border-radius: 1rem;
+  flex-grow: 3;
+}
+
 .citiesPage,
 .loginPage {
-  padding: 2rem 1rem;
   animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
   text-align: center;
+}
+
+.loginPage header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.loginPage header .img_logo {
+  width: 100px;
+  height: 100px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.loginPage main {
+  display: flex;
+}
+.loginPage main .sign {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  padding: 1rem;
+  box-shadow: 0 0.2rem 0.4rem #c6c6c6;
+  border-radius: 1rem;
+}
+.loginPage main .sign .login,
+.loginPage main .sign .register {
+  max-width: 450px;
+}
+.loginPage main .sign .switch-sign {
+  margin: 1rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  border-radius: 3rem;
+  box-shadow: 0 0.1rem 0.2rem #bfbfbf;
+  background-color: #646cff;
+  max-width: 200px;
+  position: relative;
+  height: 40px;
+}
+.loginPage main .sign .switch-sign span {
+  color: #e0e0e0;
+  font-weight: 500;
+  font-size: 0.8rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.loginPage main .sign .switch-sign .btn-switch {
+  border: #646cff solid 2px;
+  background-color: #ffffff;
+  border-radius: 3rem;
+  color: #646cff;
+  width: 50%;
+  padding: 0.6rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  position: absolute;
+  transition: all 2s;
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.loginPage main .sign .switch-sign .switch-right {
+  top: -0.1rem;
+  right: -0.1rem;
+}
+.loginPage main .sign .switch-sign .switch-left {
+  top: -0.1rem;
+  left: -0.1rem;
+}
+.loginPage main .sign .or {
+  margin-bottom: 1rem;
+}
+.loginPage main .sign .google-signin {
+  margin: auto;
+  transition: all 0.2s;
+}
+.loginPage main .sign .google-signin:hover,
+.loginPage main .sign input[type=submit]:hover {
+  transform: scale(1.1);
+}
+.loginPage main .form-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-wrap: wrap;
+}
+.loginPage main input[type=email],
+.loginPage main input[type=password],
+.loginPage main input[type=text] {
+  text-align: start;
+  width: 100%;
+  margin: 0.5rem 0;
+}
+.loginPage main .select-countries {
+  max-width: 40%;
+  padding: 0.5rem;
+  border: #646cff solid 2px;
+  border-radius: 2rem;
+}
+.loginPage main input[type=submit] {
+  text-align: center;
+  width: auto;
+}
+
+.btn-goBack {
+  padding: 1rem;
+  border: none;
+  background-color: none;
 }
 
 .link {
@@ -79,10 +195,11 @@ h1 {
   justify-content: center;
   align-items: center;
   color: white;
-  text-shadow: 0 0 0.4rem black;
+  text-shadow: 0 0 0.4rem rgb(56, 56, 56);
   position: relative;
   min-height: 100vh;
   text-align: center;
+  box-shadow: 0 0.2rem 0.4rem rgb(56, 56, 56);
 }
 .details .details-body {
   max-width: 500px;
@@ -109,11 +226,22 @@ h1 {
 .details .details-body p {
   margin: 1rem;
 }
+.details .page-contriction {
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: 400;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  color: rgba(210, 210, 210, 0.7843137255);
+}
 .details .details-img {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   -o-object-position: center;
      object-position: center;
@@ -121,6 +249,39 @@ h1 {
      object-fit: cover;
   filter: brightness(50%);
   z-index: -1;
+}
+
+main {
+  background-image: linear-gradient(to top, #edeeee, #f3f4f4, #fafbfa, #fbfcfc, #fcfdfd, #fefefe, #ffffff);
+  padding: 1rem 0;
+}
+main .itineraries {
+  background-image: linear-gradient(to top, #edeeee, #f3f4f4, #fafbfa, #fbfcfc, #fcfdfd, #fefefe, #ffffff);
+  text-align: center;
+  padding: 0.5rem;
+  min-height: 100vh;
+}
+main .itineraries .section-title {
+  font-size: 3rem;
+  margin: 1rem;
+}
+main .itineraries .itinerary-activities {
+  margin: 1rem 0;
+  animation: fade-in-top 0.6s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+main .itineraries .itinerary-activities .activities,
+main .itineraries .itinerary-activities .comments {
+  padding: 1rem;
+  background-color: #ebebeb;
+}
+main .itineraries .itinerary-activities h4 {
+  font-size: 2rem;
+}
+main .itineraries .itinerary-activities h5 {
+  font-size: 1.5rem;
+}
+main .itineraries .itinerary-activities p {
+  font-size: 1.3rem;
 }
 
 .errorPage {
@@ -140,7 +301,8 @@ h1 {
 }
 
 img,
-button {
+button,
+span {
   animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 
@@ -169,4 +331,33 @@ button {
     transform: translateY(0);
     opacity: 1;
   }
+}
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 2rem 0.5rem 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+footer ul {
+  list-style: none;
+}
+footer .social a {
+  padding: 0.1rem;
+  display: flex;
+  gap: 0.3rem;
+  text-decoration: none;
+}
+footer .social.facebook a {
+  color: #094bff;
+}
+footer .social.instagram a {
+  color: #ff008c;
+}
+footer .social.youtube a {
+  color: #eb0505;
+}
+footer .copyrights {
+  align-self: self-end;
 }/*# sourceMappingURL=style.css.map */

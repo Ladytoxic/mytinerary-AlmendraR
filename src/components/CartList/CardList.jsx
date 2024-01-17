@@ -1,71 +1,56 @@
 import './CardList.css';
-import { useState, useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { Search } from 'akar-icons';
+import { useDispatch, useSelector } from 'react-redux';
+import { get_cities, filter_cities } from '../../store/acitions/citiesActions';
 import Card from '../Card/Card';
-import useFetch from '../../Hooks/useFecth';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
-import { Search, XSmall } from 'akar-icons';
 
 const CardList = () => {
-  const [cities, setCities] = useState();
-  const [errorCities, setErrorCities] = useState(null);
+  const cities = useSelector((store) => store.citiesReducer.cities);
 
-  const [searchInput, setSearchInput] = useState('');
-  const [showResetButton, setShowResetButton] = useState(false);
+  const dispatch = useDispatch();
 
-
-  const { data, error } = useFetch({ URL_API: `http://localhost:3000/cities?name=${searchInput}&country=` });
+  const inputSearch = useRef('');
 
   useEffect(() => {
-    if (data) {
-      setCities(data.cities);
-      setErrorCities(null);
-    }
-
-    if (error) {
-      setErrorCities(error);
-    }
+    dispatch(get_cities());
   },
-    [data, error]
+    [dispatch]
   );
 
-  const handleSearchChange = (e) => {
-    const inputValue = e.target.value.trim();
-    setShowResetButton(inputValue !== '');
-    setSearchInput(inputValue);
+  const handleSearch = () => {
+    dispatch(filter_cities({
+      name: inputSearch.current.value.trim()
+    }));
   }
 
-  const handleReset = () => {
-    setSearchInput('');
-    setErrorCities(null);
-    setShowResetButton(false);
-  };
-
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      handleSearch();
+    }
+  }
 
   return (
     <>
       <section className='filtter'>
         <div className='search'>
-          <span className='search-icon'>
-            <Search strokeWidth={2} size={25} />
-          </span>
-          <input onChange={handleSearchChange} value={searchInput} className='input-search' type="text" placeholder='Search City' />
-          {showResetButton && (
-            <button className='reset-input' onClick={handleReset}>
-              <XSmall strokeWidth={2} size={35} />
-            </button>
-          )}
+          <input ref={inputSearch} onKeyPress={handleKeyPress} className='input-text' type="text" placeholder='Search City' />
+          <button onClick={handleSearch} className='search-icon'>
+            <Search strokeWidth={2} size={25} />Search
+          </button>
         </div>
-        {errorCities && (
-          <ErrorMessage message={error.data.message} />
-        )}
       </section>
       <section className='card-list'>
-        {(cities?.map((img) => (
-          <Link className='link' key={img._id} to={'/cities/' + img._id}>
-            <Card _id={img._id} name={img.name} country={img.country} image={img.image} currency={img.currency} />
-          </Link>
-        )))}
+        {cities.length > 0 ?
+          cities?.map((img) => (
+            <Link className='link' key={img._id} to={'/cities/' + img._id}>
+              <Card _id={img._id} name={img.name} country={img.country} image={img.image} currency={img.currency} />
+            </Link>
+          )) :
+          (<ErrorMessage message={'No cities found'} />)
+        }
       </section>
     </>
   )
