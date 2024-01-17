@@ -331,4 +331,33 @@ span {
     transform: translateY(0);
     opacity: 1;
   }
+}
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 2rem 0.5rem 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+footer ul {
+  list-style: none;
+}
+footer .social a {
+  padding: 0.1rem;
+  display: flex;
+  gap: 0.3rem;
+  text-decoration: none;
+}
+footer .social.facebook a {
+  color: #094bff;
+}
+footer .social.instagram a {
+  color: #ff008c;
+}
+footer .social.youtube a {
+  color: #eb0505;
+}
+footer .copyrights {
+  align-self: self-end;
 }/*# sourceMappingURL=style.css.map */

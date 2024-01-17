@@ -1,4 +1,3 @@
-import './footer.css';
 import LinksList from '../LinksList/LinksList';
 import { YoutubeFill, FacebookFill, InstagramFill } from 'akar-icons';
 

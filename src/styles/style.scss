@@ -376,3 +376,40 @@ span {
         opacity: 1;
     }
 }
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 2rem 0.5rem 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+
+    ul {
+        list-style: none;
+    }
+
+    .social a {
+        padding: 0.1rem;
+        display: flex;
+        gap: 0.3rem;
+        text-decoration: none;
+    }
+
+    .social.facebook a {
+        color: #094bff;
+    }
+
+    .social.instagram a {
+        color: #ff008c;
+    }
+
+    .social.youtube a {
+        color: #eb0505;
+    }
+
+    .copyrights {
+        align-self: self-end;
+    }
+}
